@@ -18,7 +18,10 @@ public class PlayerInputManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.velocity = _moveVec;
+        if (_moveVec.magnitude > 0.001)
+        {
+            _rb.velocity = _moveVec;
+        }
 
     }
 
@@ -26,7 +29,6 @@ public class PlayerInputManager : MonoBehaviour
     {
         Vector2 val = ctx.ReadValue<Vector2>();
         _moveVec = new Vector3(val.x, _rb.velocity.y, val.y).normalized * _speed;
-        _rb.velocity = _moveVec;
     }
 
     private void OnEnable()
