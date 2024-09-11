@@ -14,6 +14,7 @@ namespace _project.Scripts
             
             // ================== Player Inputs ==================
             _inputs.PlayerMap.Move.performed += _player.Move;
+            _inputs.PlayerMap.Move.canceled += _player.Move;
         
             // ================== Master Inputs ==================
             _inputs.PlayerMap.RedWalls.performed += _ => { _wallManager.ActivateWallType(Wall.Type.Red); };

@@ -24,7 +24,6 @@ namespace _project.Scripts
         private void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.GetComponent<Ball>()) return;
-        
             Ball ballScript = other.gameObject.GetComponent<Ball>();
             PlayerBallCollision?.Invoke(ballScript.BallType);
             

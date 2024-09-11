@@ -35,7 +35,6 @@ namespace _project.Scripts
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ballType), ballType, null);
             }
-            
             // TODO
             // Check win con and update displays
         }
