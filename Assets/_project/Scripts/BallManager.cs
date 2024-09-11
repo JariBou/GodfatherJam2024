@@ -24,6 +24,7 @@ namespace _project.Scripts
         private float _internalTimer;
         private float _spawnAttemptInternalTimer;
         private float _spawnAttemptInternalCounter;
+        private RaycastHit[] _hits = {};
         
         // Start is called before the first frame update
         void Start()
@@ -40,8 +41,9 @@ namespace _project.Scripts
             Bounds bounds = _ballPrefab.gameObject.GetComponent<MeshRenderer>().bounds;
 
             Vector3 spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Count)].position;
-
-            foreach (RaycastHit hit in Physics.SphereCastAll(spawnPoint, Mathf.Max(bounds.extents.x, bounds.extents.y, bounds.extents.z), Vector3.down))
+            Physics.SphereCastNonAlloc(spawnPoint, Mathf.Max(bounds.extents.x, bounds.extents.y, bounds.extents.z),
+                Vector3.down, _hits);
+            foreach (RaycastHit hit in _hits)
             {
                 if (hit.collider.GetComponent<Ball>())
                 {

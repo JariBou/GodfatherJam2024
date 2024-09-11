@@ -43,8 +43,8 @@ namespace _project.Scripts
         
         public void Config(Vector3 ballDir, float ballSpeed, Type ballType)
         {
-            UpdateDir(ballDir);
             _speed = ballSpeed;
+            UpdateDir(ballDir);
             _ballType = ballType;
         }
 
