@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _project.Scripts
@@ -11,6 +12,7 @@ namespace _project.Scripts
         [SerializeField] private Transform _target;
         [SerializeField] private float _offsetRadiusMax;
         // Can easily add an animation curve to make it more probable to be closer to center and stuff
+        [SerializeField] private List<Transform> _spawnPoints; // TODO: Use Graphics labor for a serialized dictionnary with possible offset
 
         private float _internalTimer;
         private float _spawnAttemptInternalTimer;

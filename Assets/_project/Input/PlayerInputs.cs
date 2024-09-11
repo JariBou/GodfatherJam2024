@@ -35,6 +35,33 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Red Walls"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca49fc5e-2b5b-4bc2-a9c1-70e01327dade"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Blue Walls"",
+                    ""type"": ""Button"",
+                    ""id"": ""eba972bf-4784-4035-bc0c-a8255bc20ea4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Yellow Walls"",
+                    ""type"": ""Button"",
+                    ""id"": ""e6cabf3e-0b3c-452d-b98d-3bfb997d3fff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +119,39 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""983b64b9-9337-4782-9999-cd9b55a2aa9c"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Red Walls"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51ce9d48-c73b-40c1-934e-02eddf4f2177"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Blue Walls"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""693c09ff-8908-4b2b-984a-b75f71c5f47e"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Yellow Walls"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +161,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // PlayerMap
         m_PlayerMap = asset.FindActionMap("PlayerMap", throwIfNotFound: true);
         m_PlayerMap_Move = m_PlayerMap.FindAction("Move", throwIfNotFound: true);
+        m_PlayerMap_RedWalls = m_PlayerMap.FindAction("Red Walls", throwIfNotFound: true);
+        m_PlayerMap_BlueWalls = m_PlayerMap.FindAction("Blue Walls", throwIfNotFound: true);
+        m_PlayerMap_YellowWalls = m_PlayerMap.FindAction("Yellow Walls", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,11 +226,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerMap;
     private List<IPlayerMapActions> m_PlayerMapActionsCallbackInterfaces = new List<IPlayerMapActions>();
     private readonly InputAction m_PlayerMap_Move;
+    private readonly InputAction m_PlayerMap_RedWalls;
+    private readonly InputAction m_PlayerMap_BlueWalls;
+    private readonly InputAction m_PlayerMap_YellowWalls;
     public struct PlayerMapActions
     {
         private @PlayerInputs m_Wrapper;
         public PlayerMapActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerMap_Move;
+        public InputAction @RedWalls => m_Wrapper.m_PlayerMap_RedWalls;
+        public InputAction @BlueWalls => m_Wrapper.m_PlayerMap_BlueWalls;
+        public InputAction @YellowWalls => m_Wrapper.m_PlayerMap_YellowWalls;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -180,6 +249,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @RedWalls.started += instance.OnRedWalls;
+            @RedWalls.performed += instance.OnRedWalls;
+            @RedWalls.canceled += instance.OnRedWalls;
+            @BlueWalls.started += instance.OnBlueWalls;
+            @BlueWalls.performed += instance.OnBlueWalls;
+            @BlueWalls.canceled += instance.OnBlueWalls;
+            @YellowWalls.started += instance.OnYellowWalls;
+            @YellowWalls.performed += instance.OnYellowWalls;
+            @YellowWalls.canceled += instance.OnYellowWalls;
         }
 
         private void UnregisterCallbacks(IPlayerMapActions instance)
@@ -187,6 +265,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @RedWalls.started -= instance.OnRedWalls;
+            @RedWalls.performed -= instance.OnRedWalls;
+            @RedWalls.canceled -= instance.OnRedWalls;
+            @BlueWalls.started -= instance.OnBlueWalls;
+            @BlueWalls.performed -= instance.OnBlueWalls;
+            @BlueWalls.canceled -= instance.OnBlueWalls;
+            @YellowWalls.started -= instance.OnYellowWalls;
+            @YellowWalls.performed -= instance.OnYellowWalls;
+            @YellowWalls.canceled -= instance.OnYellowWalls;
         }
 
         public void RemoveCallbacks(IPlayerMapActions instance)
@@ -207,5 +294,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IPlayerMapActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnRedWalls(InputAction.CallbackContext context);
+        void OnBlueWalls(InputAction.CallbackContext context);
+        void OnYellowWalls(InputAction.CallbackContext context);
     }
 }

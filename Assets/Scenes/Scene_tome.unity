@@ -1597,6 +1597,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1717302195}
   - component: {fileID: 1717302194}
+  - component: {fileID: 1717302196}
+  - component: {fileID: 1717302197}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1636,6 +1638,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1717302196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717302193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c1ebedced811b5641a2ecbdbf4f5ffe1,
+    type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e870c0b9-cb60-4694-982e-dd8c51bd1fe1
+    m_ActionName: PlayerMap/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca49fc5e-2b5b-4bc2-a9c1-70e01327dade
+    m_ActionName: PlayerMap/Red Walls[/Keyboard/numpad1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eba972bf-4784-4035-bc0c-a8255bc20ea4
+    m_ActionName: PlayerMap/Blue Walls[/Keyboard/numpad2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e6cabf3e-0b3c-452d-b98d-3bfb997d3fff
+    m_ActionName: PlayerMap/Yellow Walls[/Keyboard/numpad3]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerMap
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1717302197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717302193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280a9a9ecf65c64408710327b3bafb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wallManager: {fileID: 1717302194}
+  _player: {fileID: 1658743053}
 --- !u!1 &1799487558
 GameObject:
   m_ObjectHideFlags: 0

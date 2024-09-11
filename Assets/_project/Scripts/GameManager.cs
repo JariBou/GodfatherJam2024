@@ -9,7 +9,6 @@ namespace _project.Scripts
         [SerializeField] private int _maxScore = 100;
         [SerializeField] private int _startingScore = 50;
 
-
         private int _score;
 
         private void Awake()
