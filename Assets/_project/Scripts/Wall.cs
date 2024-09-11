@@ -17,10 +17,10 @@ namespace _project.Scripts
 
         private void OnCollisionEnter(Collision other)
         {
-            if (!other.gameObject.GetComponent<Ball>()) return;
+            if (!other.gameObject.GetComponent<Ball>() || !_isActivated) return; // TEMP "!_isActivated"
         
             Ball ballScript = other.gameObject.GetComponent<Ball>();
-            if (ballScript.BallType == Ball.Type.Master) return; // MAster ball should have collisions disabled with this layer
+            if (ballScript.BallType == Ball.Type.Master) return;
 
             switch (WallType)
             {
@@ -46,7 +46,7 @@ namespace _project.Scripts
             float height = GetComponent<MeshRenderer>().bounds.extents.y * 2;
             transform.position += new Vector3(0, height, 0);
             _isActivated = true;
-            //TODO
+            //TODO + animation and stuff
         }
 
         public void Deactivate()
@@ -59,7 +59,7 @@ namespace _project.Scripts
             float height = GetComponent<MeshRenderer>().bounds.extents.y * 2;
             transform.position -= new Vector3(0, height, 0);
             _isActivated = false;
-            //TODO
+            //TODO + animation and stuff
         }
 
         public void SwitchState()

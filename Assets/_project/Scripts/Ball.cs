@@ -14,6 +14,8 @@ namespace _project.Scripts
         [SerializeField] private Ball.Type _ballType;
         [SerializeField] private Vector3 _dir;
         [SerializeField] private float _speed;
+
+        [SerializeField] private float _destroyDelay = .0f;
         
         private Vector3 _ballSpeed;
 
@@ -29,7 +31,7 @@ namespace _project.Scripts
 
         private void FixedUpdate()
         {
-            _rb.velocity = _ballSpeed;
+            _rb.velocity = new Vector3(_ballSpeed.x, _rb.velocity.y, _ballSpeed.z);
         }
 
         public void UpdateDir(Vector3 newDir)
@@ -38,11 +40,11 @@ namespace _project.Scripts
             _ballSpeed = _dir.normalized * _speed;
         }
 
-        public void DestroyBall(float delay = 0.0f)
+        public void DestroyBall()
         {
-            if (delay > 0.00001f)
+            if (_destroyDelay > 0.00001f)
             {
-                StartCoroutine(DelayedDestroyBall(delay));
+                StartCoroutine(DelayedDestroyBall(_destroyDelay));
             }
             else
             {
