@@ -1,0 +1,74 @@
+{
+    "name": "MasterInputs",
+    "maps": [
+        {
+            "name": "MasterMap",
+            "id": "36f1fa7d-2997-46df-b26f-0e7a26d606d2",
+            "actions": [
+                {
+                    "name": "Red Walls",
+                    "type": "Button",
+                    "id": "0ea2470a-2b68-4420-be2f-f2f48226a8f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Blue Walls",
+                    "type": "Button",
+                    "id": "c16f70fb-604d-4b2b-8712-5343efc84774",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Yellow Walls",
+                    "type": "Button",
+                    "id": "2134fee6-eb75-4ad6-a9cf-748847ccd45e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "932fe7d2-ebb1-4d05-a70c-72f5be7c4c18",
+                    "path": "<Keyboard>/numpad1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Red Walls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13be1de9-18ed-4975-ab97-0408a210c495",
+                    "path": "<Keyboard>/numpad2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Blue Walls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad47fc0d-cbb2-4c1e-aca0-05cc9eea13f7",
+                    "path": "<Keyboard>/numpad3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yellow Walls",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
