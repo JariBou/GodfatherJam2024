@@ -54,16 +54,16 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Contrast: 1
+    - _Contrast: 0
     - _Distance: 0
     - _Float: 0.5
     - _Float_1: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SliderPercentage: 0.5
+    - _SliderPercentage: 0.52
     m_Colors:
-    - _Color: {r: 0.21568623, g: 0.772549, b: 0.27966028, a: 0}
-    - _Color_1: {r: 0.35849056, g: 0.075080074, b: 0.31846836, a: 0}
+    - _Color: {r: 0.33325028, g: 0.4339623, b: 0.3445981, a: 0}
+    - _Color_1: {r: 0, g: 0, b: 0, a: 0}
     - _Color_2: {r: 0.5773585, g: 0.5773585, b: 0.5773585, a: 0}
     - _Color_3: {r: 0.7962264, g: 0, b: 0.09260992, a: 0}
   m_BuildTextureStacks: []
