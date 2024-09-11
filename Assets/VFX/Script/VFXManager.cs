@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using Unity.UI;
+using Image = UnityEngine.UI.Image;
 
 public class VFXManager : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _scoringParticleSystem;
     [SerializeField] private ParticleSystem _appearParticleSystem;
     private ParticleSystemStopBehavior _particleSystemStopBehavior = ParticleSystemStopBehavior.StopEmitting;
+    [SerializeField] private Image _slider;
+
+    public void UpdateSlider(float percent)
+    {
+        _slider.material.SetFloat("_SliderPercentage", percent);
+        Debug.Log(_slider.material.GetFloat("_SliderPercentage"));
+    }
 
     void ScoringParticleParticlePlay()
     {

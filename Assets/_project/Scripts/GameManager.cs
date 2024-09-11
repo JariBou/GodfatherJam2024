@@ -8,7 +8,7 @@ namespace _project.Scripts
 
         [SerializeField] private int _maxScore = 100;
         [SerializeField] private int _startingScore = 50;
-
+        [SerializeField] private VFXManager _vfxManager;
 
         private int _score;
 
@@ -36,7 +36,7 @@ namespace _project.Scripts
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ballType), ballType, null);
             }
-            
+            _vfxManager.UpdateSlider(GetScorePercent());
             // TODO
             // Check win con and update displays
         }
