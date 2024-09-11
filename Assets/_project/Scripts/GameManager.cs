@@ -15,6 +15,7 @@ namespace _project.Scripts
         private void Awake()
         {
             _score = _startingScore;
+            _vfxManager.UpdateSlider(GetScorePercent());
         }
 
         // For Shader (ScoreDisplay)

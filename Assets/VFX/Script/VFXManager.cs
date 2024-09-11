@@ -15,7 +15,6 @@ public class VFXManager : MonoBehaviour
     public void UpdateSlider(float percent)
     {
         _slider.material.SetFloat("_SliderPercentage", percent);
-        Debug.Log(_slider.material.GetFloat("_SliderPercentage"));
     }
 
     void ScoringParticleParticlePlay()
