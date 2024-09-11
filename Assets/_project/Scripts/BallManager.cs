@@ -10,7 +10,7 @@ namespace _project.Scripts
     public class BallManager : MonoBehaviour
     {
         [SerializeField] private GameObject _ballPrefab;
-        [SerializeField] private float _cooldwonPerSpawn = 3f;
+        [SerializeField] private float _cooldownPerSpawn = 3f;
         [SerializeField] private float _cooldownPerSpawnRandomRange = .0f;
         [SerializeField] private float _ballsPerSpawnPhase = 1;
         [SerializeField] private float _cooldownPerSpawnAttempt = 0.5f;
@@ -25,6 +25,11 @@ namespace _project.Scripts
         private float _spawnAttemptInternalTimer;
         private float _spawnAttemptInternalCounter;
         private RaycastHit[] _hits = {};
+        
+        // Master Variables
+        private float _spawnCooldownMultiplier = 1f;
+        private float _ballSpeedMultiplier = 1f;
+        
         
         // Start is called before the first frame update
         void Start()
@@ -56,7 +61,7 @@ namespace _project.Scripts
             Vector3 targetPos = _target.position + new Vector3(Random.Range(-_offsetRadiusMax, _offsetRadiusMax), 0,
                 Random.Range(-_offsetRadiusMax, _offsetRadiusMax));
             Vector3 ballDir = targetPos - spawnPoint;
-            spawnedBall.Config(ballDir, _ballSpeed, Ball.Type.Player);
+            spawnedBall.Config(ballDir, _ballSpeed * _ballSpeedMultiplier, Ball.Type.Player);
 
             // DO Spawning here
 
@@ -71,7 +76,7 @@ namespace _project.Scripts
         private IEnumerator DoSpawnPhaseCooldown()
         {
             _spawnAttemptInternalCounter = 0;
-            yield return new WaitForSeconds(_cooldwonPerSpawn + Random.Range(-_cooldownPerSpawnRandomRange, _cooldownPerSpawnRandomRange));
+            yield return new WaitForSeconds(_cooldownPerSpawn * _spawnCooldownMultiplier + Random.Range(-_cooldownPerSpawnRandomRange, _cooldownPerSpawnRandomRange));
             AttemptSpawn();
         }
         
@@ -81,10 +86,22 @@ namespace _project.Scripts
             AttemptSpawn();
         }
 
-        // Update is called once per frame
-        void Update()
+        public void ModifySpawnSpeed(float multDelta)
         {
+            _spawnCooldownMultiplier += multDelta;
+            if (_spawnCooldownMultiplier <= 0)
+            {
+                _spawnCooldownMultiplier = Math.Abs(multDelta);
+            }
+        }
         
+        public void ModifyBallSpeed(float multDelta)
+        {
+            _ballSpeedMultiplier += multDelta;
+            if (_ballSpeedMultiplier <= 0)
+            {
+                _ballSpeedMultiplier = Math.Abs(multDelta);
+            }
         }
 
         private void OnValidate()

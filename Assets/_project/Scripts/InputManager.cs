@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _project.Scripts
@@ -6,6 +7,9 @@ namespace _project.Scripts
     {
         [SerializeField] private WallManager _wallManager;
         [SerializeField] private Player _player;
+        [SerializeField] private BallManager _ballManager;
+        [SerializeField] private float _spawnSpeedIncrement = .1f;
+        [SerializeField] private float _ballSpeedIncrement = .1f;
         private PlayerInputs _inputs;
 
         private void Awake()
@@ -20,6 +24,14 @@ namespace _project.Scripts
             _inputs.PlayerMap.RedWalls.performed += _ => { _wallManager.ActivateWallType(Wall.Type.Red); };
             _inputs.PlayerMap.BlueWalls.performed += _ => { _wallManager.ActivateWallType(Wall.Type.Blue); };
             _inputs.PlayerMap.YellowWalls.performed += _ => { _wallManager.ActivateWallType(Wall.Type.Yellow); };
+            _inputs.PlayerMap.SpawnSpeedChange.performed += ctx =>
+            {
+                _ballManager.ModifySpawnSpeed(_spawnSpeedIncrement * Math.Sign(ctx.ReadValue<float>()));
+            };
+            _inputs.PlayerMap.BallSpeedChange.performed += ctx =>
+            {
+                _ballManager.ModifyBallSpeed(_ballSpeedIncrement * Math.Sign(ctx.ReadValue<float>()));
+            };
         }
         
         

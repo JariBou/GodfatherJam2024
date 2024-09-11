@@ -1506,6 +1506,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5741032598437099751}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1199585515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4822515759318345800, guid: dc9f1db063039d945bc82a7625af25d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5741032598437099751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e63289a85f0a43be504cb9ef94d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1220841732 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
@@ -2308,6 +2320,11 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1220841732}
+    - target: {fileID: 1464170373696361001, guid: e759e7103227f964eb2104b9d0a6eb46,
+        type: 3}
+      propertyPath: _ballManager
+      value: 
+      objectReference: {fileID: 1199585515}
     - target: {fileID: 1585978002467048056, guid: e759e7103227f964eb2104b9d0a6eb46,
         type: 3}
       propertyPath: m_Name
@@ -2396,6 +2413,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2306260644341990852, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5873480696597927079, guid: 537bd4d8583e06049be3bf78a9243869,
         type: 3}
       propertyPath: m_Name
@@ -2450,6 +2472,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _drag
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _maxSpeed
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _appliedForceStrength
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

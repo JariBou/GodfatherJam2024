@@ -62,6 +62,24 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SpawnSpeedChange"",
+                    ""type"": ""Value"",
+                    ""id"": ""258dda63-0a6c-4ecc-b3be-f5e62c89022e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""BallSpeedChange"",
+                    ""type"": ""Value"",
+                    ""id"": ""588e2a68-8a0e-4ecb-885c-e737c2cd7828"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -152,6 +170,72 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Yellow Walls"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""ef9e8610-36c1-4d9c-bf48-8c59b1c45853"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnSpeedChange"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""a5491951-b5cc-46b4-a74c-7c3ad8c825ae"",
+                    ""path"": ""<Keyboard>/numpadPlus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnSpeedChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""9ade23e6-5178-4e01-bbe0-9bcb69549a95"",
+                    ""path"": ""<Keyboard>/numpadMinus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SpawnSpeedChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""4d7f76e2-7e37-4c7f-8c8b-99372d827032"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BallSpeedChange"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""e915d309-54d4-49f3-bfe0-3b022c43b1b3"",
+                    ""path"": ""<Keyboard>/numpadDivide"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BallSpeedChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""5b99f510-acd2-4fd5-ad4a-adf4a514ba72"",
+                    ""path"": ""<Keyboard>/numpadMultiply"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BallSpeedChange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -164,6 +248,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerMap_RedWalls = m_PlayerMap.FindAction("Red Walls", throwIfNotFound: true);
         m_PlayerMap_BlueWalls = m_PlayerMap.FindAction("Blue Walls", throwIfNotFound: true);
         m_PlayerMap_YellowWalls = m_PlayerMap.FindAction("Yellow Walls", throwIfNotFound: true);
+        m_PlayerMap_SpawnSpeedChange = m_PlayerMap.FindAction("SpawnSpeedChange", throwIfNotFound: true);
+        m_PlayerMap_BallSpeedChange = m_PlayerMap.FindAction("BallSpeedChange", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +315,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMap_RedWalls;
     private readonly InputAction m_PlayerMap_BlueWalls;
     private readonly InputAction m_PlayerMap_YellowWalls;
+    private readonly InputAction m_PlayerMap_SpawnSpeedChange;
+    private readonly InputAction m_PlayerMap_BallSpeedChange;
     public struct PlayerMapActions
     {
         private @PlayerInputs m_Wrapper;
@@ -237,6 +325,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @RedWalls => m_Wrapper.m_PlayerMap_RedWalls;
         public InputAction @BlueWalls => m_Wrapper.m_PlayerMap_BlueWalls;
         public InputAction @YellowWalls => m_Wrapper.m_PlayerMap_YellowWalls;
+        public InputAction @SpawnSpeedChange => m_Wrapper.m_PlayerMap_SpawnSpeedChange;
+        public InputAction @BallSpeedChange => m_Wrapper.m_PlayerMap_BallSpeedChange;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +348,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @YellowWalls.started += instance.OnYellowWalls;
             @YellowWalls.performed += instance.OnYellowWalls;
             @YellowWalls.canceled += instance.OnYellowWalls;
+            @SpawnSpeedChange.started += instance.OnSpawnSpeedChange;
+            @SpawnSpeedChange.performed += instance.OnSpawnSpeedChange;
+            @SpawnSpeedChange.canceled += instance.OnSpawnSpeedChange;
+            @BallSpeedChange.started += instance.OnBallSpeedChange;
+            @BallSpeedChange.performed += instance.OnBallSpeedChange;
+            @BallSpeedChange.canceled += instance.OnBallSpeedChange;
         }
 
         private void UnregisterCallbacks(IPlayerMapActions instance)
@@ -274,6 +370,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @YellowWalls.started -= instance.OnYellowWalls;
             @YellowWalls.performed -= instance.OnYellowWalls;
             @YellowWalls.canceled -= instance.OnYellowWalls;
+            @SpawnSpeedChange.started -= instance.OnSpawnSpeedChange;
+            @SpawnSpeedChange.performed -= instance.OnSpawnSpeedChange;
+            @SpawnSpeedChange.canceled -= instance.OnSpawnSpeedChange;
+            @BallSpeedChange.started -= instance.OnBallSpeedChange;
+            @BallSpeedChange.performed -= instance.OnBallSpeedChange;
+            @BallSpeedChange.canceled -= instance.OnBallSpeedChange;
         }
 
         public void RemoveCallbacks(IPlayerMapActions instance)
@@ -297,5 +399,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnRedWalls(InputAction.CallbackContext context);
         void OnBlueWalls(InputAction.CallbackContext context);
         void OnYellowWalls(InputAction.CallbackContext context);
+        void OnSpawnSpeedChange(InputAction.CallbackContext context);
+        void OnBallSpeedChange(InputAction.CallbackContext context);
     }
 }
