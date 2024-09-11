@@ -28,14 +28,33 @@ namespace _project.Scripts
         // Start is called before the first frame update
         void Start()
         {
-        
+            StartCoroutine(DoSpawnPhaseCooldown());
         }
 
-        private void AttemptSpawn()
+        private void AttemptSpawn(int attemptCount = 0)
         {
+            if (attemptCount > 20)
+            {
+                return;
+            }
             Bounds bounds = _ballPrefab.gameObject.GetComponent<MeshRenderer>().bounds;
 
-            Vector3 sp = _spawnPoints[Random.Range(0, _spawnPoints.Count)].position;
+            Vector3 spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Count)].position;
+
+            foreach (RaycastHit hit in Physics.SphereCastAll(spawnPoint, Mathf.Max(bounds.extents.x, bounds.extents.y, bounds.extents.z), Vector3.down))
+            {
+                if (hit.collider.GetComponent<Ball>())
+                {
+                    AttemptSpawn(attemptCount++);
+                    return;
+                }
+            }
+
+            Ball spawnedBall = Instantiate(_ballPrefab, spawnPoint, Quaternion.identity, transform).GetComponent<Ball>();
+            Vector3 targetPos = _target.position + new Vector3(Random.Range(-_offsetRadiusMax, _offsetRadiusMax), 0,
+                Random.Range(-_offsetRadiusMax, _offsetRadiusMax));
+            Vector3 ballDir = targetPos - spawnPoint;
+            spawnedBall.Config(ballDir, _ballSpeed, Ball.Type.Player);
 
             // DO Spawning here
 
@@ -64,6 +83,11 @@ namespace _project.Scripts
         void Update()
         {
         
+        }
+
+        private void OnValidate()
+        {
+            if (_ballPrefab != null && _ballPrefab.GetComponent<Ball>() == null) _ballPrefab = null;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace _project.Scripts
 
         [SerializeField] private float _destroyDelay = .0f;
         
-        private Vector3 _ballSpeed;
+        private Vector3 _ballVelocity;
 
         public Type BallType => _ballType;
 
@@ -26,18 +26,26 @@ namespace _project.Scripts
         private void Awake()
         {
             UpdateDir(_dir);
-            _rb.velocity = _ballSpeed;
+            _rb.velocity = _ballVelocity;
         }
 
         private void FixedUpdate()
         {
-            _rb.velocity = new Vector3(_ballSpeed.x, _rb.velocity.y, _ballSpeed.z);
+            _rb.velocity = new Vector3(_ballVelocity.x, _rb.velocity.y, _ballVelocity.z);
         }
 
         public void UpdateDir(Vector3 newDir)
         {
             _dir = newDir;
-            _ballSpeed = _dir.normalized * _speed;
+            _ballVelocity = _dir.normalized * _speed;
+        }
+        
+        
+        public void Config(Vector3 ballDir, float ballSpeed, Type ballType)
+        {
+            UpdateDir(ballDir);
+            _speed = ballSpeed;
+            _ballType = ballType;
         }
 
         public void DestroyBall()
@@ -73,5 +81,6 @@ namespace _project.Scripts
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
+
     }
 }
