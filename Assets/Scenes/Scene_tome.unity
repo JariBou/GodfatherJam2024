@@ -933,7 +933,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 732653965184efc45a0a88a1b42955e2, type: 3}
+  - {fileID: 2100000, guid: 40e180ba6a34e6e4b896505cf1db5087, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2010,7 +2010,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
@@ -2195,7 +2195,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e60f91507525e5047819f9aa903ed786,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9
+      value: -14.97
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e60f91507525e5047819f9aa903ed786,
         type: 3}
