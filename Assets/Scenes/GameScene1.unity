@@ -1396,6 +1396,7 @@ GameObject:
   - component: {fileID: 729256564}
   - component: {fileID: 729256563}
   - component: {fileID: 729256566}
+  - component: {fileID: 729256567}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1522,6 +1523,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &729256567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729256562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea1a158f9a91148b250111c6e326a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1220841732}
+  _lerpFactor: 0.1
 --- !u!1 &808512249
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,6 +4225,56 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3328435399772725722, guid: 6b47738c59fc508469c2194b3ca54ba9,
         type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _masterBallPickupSound.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _playerBallPickupSound.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _masterBallPickupSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ceed5e163ab77da40958352e24a14b02, type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _masterBallPickupSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7811e181285acf7418f027c5f0a06b87, type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _masterBallPickupSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e9814e2801183d247bb44c79eb39a057, type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _masterBallPickupSound.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 12db9eab271b0ff44af7ca1344c56b5c, type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _playerBallPickupSound.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a75f0db2ac0c324ba759e041c754ad4, type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _playerBallPickupSound.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 243975cdb7e4b52468ff7928e1f82442, type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _playerBallPickupSound.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ad81c9b8c4c59b64ba8a1433eca35046, type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _playerBallPickupSound.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: fd323f8746cb2df4f871a80d2e06438c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

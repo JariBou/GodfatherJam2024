@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using _project.Scripts.Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,15 +15,18 @@ namespace _project.Scripts
         [FormerlySerializedAs("_speed")] [SerializeField, Range(0, 400)] private float _maxSpeed = 200f;
         [SerializeField, Range(1f, 5f)] private float _angularSpeed = 3f;
         [SerializeField] private GameObject _playerBallPickupParticle; 
-        [SerializeField] private AudioClip _playerBallPickupSound; 
+        [SerializeField] private List<AudioClip> _playerBallPickupSound; 
         [SerializeField] private GameObject _masterBallPickupParticle; 
-        [SerializeField] private AudioClip _masterBallPickupSound; 
+        [SerializeField] private List<AudioClip> _masterBallPickupSound; 
         
         private Vector3 _moveVec;
         private Transform _startTransform;
         private bool _isPickupActive = true;
         
+        public Transform StartTransform => _startTransform;
+        
         public static event Action<Ball.Type> PlayerBallCollision;
+
 
         private void Awake()
         {
@@ -54,11 +58,11 @@ namespace _project.Scripts
             {
                 case Ball.Type.Player:
                     Instantiate(_playerBallPickupParticle, transform.position, Quaternion.identity);
-                    AudioManager.PlayClip(_playerBallPickupSound);
+                    AudioManager.PlayRandomClipWithNoRepeat(_playerBallPickupSound);
                     break;
                 case Ball.Type.Master:
                     Instantiate(_masterBallPickupParticle, transform.position, Quaternion.identity);
-                    AudioManager.PlayClip(_masterBallPickupSound);
+                    AudioManager.PlayRandomClipWithNoRepeat(_masterBallPickupSound);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -95,8 +99,8 @@ namespace _project.Scripts
 
         public void Respawn()
         {
-            transform.position = _startTransform.position;
-            transform.rotation = _startTransform.rotation;
+            transform.position = StartTransform.position;
+            transform.rotation = StartTransform.rotation;
         }
     }
 }
