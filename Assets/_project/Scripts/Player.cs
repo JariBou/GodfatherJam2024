@@ -11,6 +11,8 @@ namespace _project.Scripts
         [SerializeField, Range(0, 20)] private float _drag = 1.7f;
         [SerializeField, Range(1, 200)] private float _appliedForceStrength = 60f;
         [FormerlySerializedAs("_speed")] [SerializeField, Range(0, 400)] private float _maxSpeed = 200f;
+        [SerializeField] private GameObject _playerBallPickupParticle; 
+        [SerializeField] private GameObject _masterBallPickupParticle; 
         private Vector3 _moveVec;
 
         private bool _isPickupActive = true;
@@ -33,6 +35,16 @@ namespace _project.Scripts
             Ball ballScript = other.gameObject.GetComponent<Ball>();
             
             if(_isPickupActive) PlayerBallCollision?.Invoke(ballScript.BallType);
+            switch (ballScript.BallType)
+            {
+                case Ball.Type.Player:
+                    Instantiate(_playerBallPickupParticle, transform.position, Quaternion.identity);
+                    break;
+                case Ball.Type.Master:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
             
             ballScript.DestroyBall();
         }
