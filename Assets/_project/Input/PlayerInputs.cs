@@ -37,7 +37,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Red Walls"",
+                    ""name"": ""Random Red Walls"",
                     ""type"": ""Button"",
                     ""id"": ""ca49fc5e-2b5b-4bc2-a9c1-70e01327dade"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,16 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Blue Walls"",
+                    ""name"": ""Red Walls Removal"",
+                    ""type"": ""Button"",
+                    ""id"": ""cae04f85-0e2e-4522-bb42-a90bfdcc6e5e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Random Blue Walls"",
                     ""type"": ""Button"",
                     ""id"": ""eba972bf-4784-4035-bc0c-a8255bc20ea4"",
                     ""expectedControlType"": ""Button"",
@@ -55,9 +64,27 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Yellow Walls"",
+                    ""name"": ""Blue Walls Removal"",
+                    ""type"": ""Button"",
+                    ""id"": ""bcf1a1a5-b432-4b24-ab7a-52f25767e92e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Random Yellow Walls"",
                     ""type"": ""Button"",
                     ""id"": ""e6cabf3e-0b3c-452d-b98d-3bfb997d3fff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Yellow Walls Removal"",
+                    ""type"": ""Button"",
+                    ""id"": ""5a371972-4fbf-4d17-9e2b-3fb8ad0e4862"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -145,7 +172,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Red Walls"",
+                    ""action"": ""Random Red Walls"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -156,7 +183,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Blue Walls"",
+                    ""action"": ""Random Blue Walls"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -167,7 +194,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Yellow Walls"",
+                    ""action"": ""Random Yellow Walls"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -236,6 +263,39 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""BallSpeedChange"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d8dfa56d-be84-405f-90fe-1b88d66523b6"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Red Walls Removal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3dddda22-b852-42a6-9618-1bb61b9768ee"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Blue Walls Removal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6226877d-3876-415a-b6cf-5fa4b0f3e54f"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Yellow Walls Removal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -245,9 +305,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // PlayerMap
         m_PlayerMap = asset.FindActionMap("PlayerMap", throwIfNotFound: true);
         m_PlayerMap_Move = m_PlayerMap.FindAction("Move", throwIfNotFound: true);
-        m_PlayerMap_RedWalls = m_PlayerMap.FindAction("Red Walls", throwIfNotFound: true);
-        m_PlayerMap_BlueWalls = m_PlayerMap.FindAction("Blue Walls", throwIfNotFound: true);
-        m_PlayerMap_YellowWalls = m_PlayerMap.FindAction("Yellow Walls", throwIfNotFound: true);
+        m_PlayerMap_RandomRedWalls = m_PlayerMap.FindAction("Random Red Walls", throwIfNotFound: true);
+        m_PlayerMap_RedWallsRemoval = m_PlayerMap.FindAction("Red Walls Removal", throwIfNotFound: true);
+        m_PlayerMap_RandomBlueWalls = m_PlayerMap.FindAction("Random Blue Walls", throwIfNotFound: true);
+        m_PlayerMap_BlueWallsRemoval = m_PlayerMap.FindAction("Blue Walls Removal", throwIfNotFound: true);
+        m_PlayerMap_RandomYellowWalls = m_PlayerMap.FindAction("Random Yellow Walls", throwIfNotFound: true);
+        m_PlayerMap_YellowWallsRemoval = m_PlayerMap.FindAction("Yellow Walls Removal", throwIfNotFound: true);
         m_PlayerMap_SpawnSpeedChange = m_PlayerMap.FindAction("SpawnSpeedChange", throwIfNotFound: true);
         m_PlayerMap_BallSpeedChange = m_PlayerMap.FindAction("BallSpeedChange", throwIfNotFound: true);
     }
@@ -312,9 +375,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerMap;
     private List<IPlayerMapActions> m_PlayerMapActionsCallbackInterfaces = new List<IPlayerMapActions>();
     private readonly InputAction m_PlayerMap_Move;
-    private readonly InputAction m_PlayerMap_RedWalls;
-    private readonly InputAction m_PlayerMap_BlueWalls;
-    private readonly InputAction m_PlayerMap_YellowWalls;
+    private readonly InputAction m_PlayerMap_RandomRedWalls;
+    private readonly InputAction m_PlayerMap_RedWallsRemoval;
+    private readonly InputAction m_PlayerMap_RandomBlueWalls;
+    private readonly InputAction m_PlayerMap_BlueWallsRemoval;
+    private readonly InputAction m_PlayerMap_RandomYellowWalls;
+    private readonly InputAction m_PlayerMap_YellowWallsRemoval;
     private readonly InputAction m_PlayerMap_SpawnSpeedChange;
     private readonly InputAction m_PlayerMap_BallSpeedChange;
     public struct PlayerMapActions
@@ -322,9 +388,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         private @PlayerInputs m_Wrapper;
         public PlayerMapActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_PlayerMap_Move;
-        public InputAction @RedWalls => m_Wrapper.m_PlayerMap_RedWalls;
-        public InputAction @BlueWalls => m_Wrapper.m_PlayerMap_BlueWalls;
-        public InputAction @YellowWalls => m_Wrapper.m_PlayerMap_YellowWalls;
+        public InputAction @RandomRedWalls => m_Wrapper.m_PlayerMap_RandomRedWalls;
+        public InputAction @RedWallsRemoval => m_Wrapper.m_PlayerMap_RedWallsRemoval;
+        public InputAction @RandomBlueWalls => m_Wrapper.m_PlayerMap_RandomBlueWalls;
+        public InputAction @BlueWallsRemoval => m_Wrapper.m_PlayerMap_BlueWallsRemoval;
+        public InputAction @RandomYellowWalls => m_Wrapper.m_PlayerMap_RandomYellowWalls;
+        public InputAction @YellowWallsRemoval => m_Wrapper.m_PlayerMap_YellowWallsRemoval;
         public InputAction @SpawnSpeedChange => m_Wrapper.m_PlayerMap_SpawnSpeedChange;
         public InputAction @BallSpeedChange => m_Wrapper.m_PlayerMap_BallSpeedChange;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
@@ -339,15 +408,24 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @RedWalls.started += instance.OnRedWalls;
-            @RedWalls.performed += instance.OnRedWalls;
-            @RedWalls.canceled += instance.OnRedWalls;
-            @BlueWalls.started += instance.OnBlueWalls;
-            @BlueWalls.performed += instance.OnBlueWalls;
-            @BlueWalls.canceled += instance.OnBlueWalls;
-            @YellowWalls.started += instance.OnYellowWalls;
-            @YellowWalls.performed += instance.OnYellowWalls;
-            @YellowWalls.canceled += instance.OnYellowWalls;
+            @RandomRedWalls.started += instance.OnRandomRedWalls;
+            @RandomRedWalls.performed += instance.OnRandomRedWalls;
+            @RandomRedWalls.canceled += instance.OnRandomRedWalls;
+            @RedWallsRemoval.started += instance.OnRedWallsRemoval;
+            @RedWallsRemoval.performed += instance.OnRedWallsRemoval;
+            @RedWallsRemoval.canceled += instance.OnRedWallsRemoval;
+            @RandomBlueWalls.started += instance.OnRandomBlueWalls;
+            @RandomBlueWalls.performed += instance.OnRandomBlueWalls;
+            @RandomBlueWalls.canceled += instance.OnRandomBlueWalls;
+            @BlueWallsRemoval.started += instance.OnBlueWallsRemoval;
+            @BlueWallsRemoval.performed += instance.OnBlueWallsRemoval;
+            @BlueWallsRemoval.canceled += instance.OnBlueWallsRemoval;
+            @RandomYellowWalls.started += instance.OnRandomYellowWalls;
+            @RandomYellowWalls.performed += instance.OnRandomYellowWalls;
+            @RandomYellowWalls.canceled += instance.OnRandomYellowWalls;
+            @YellowWallsRemoval.started += instance.OnYellowWallsRemoval;
+            @YellowWallsRemoval.performed += instance.OnYellowWallsRemoval;
+            @YellowWallsRemoval.canceled += instance.OnYellowWallsRemoval;
             @SpawnSpeedChange.started += instance.OnSpawnSpeedChange;
             @SpawnSpeedChange.performed += instance.OnSpawnSpeedChange;
             @SpawnSpeedChange.canceled += instance.OnSpawnSpeedChange;
@@ -361,15 +439,24 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @RedWalls.started -= instance.OnRedWalls;
-            @RedWalls.performed -= instance.OnRedWalls;
-            @RedWalls.canceled -= instance.OnRedWalls;
-            @BlueWalls.started -= instance.OnBlueWalls;
-            @BlueWalls.performed -= instance.OnBlueWalls;
-            @BlueWalls.canceled -= instance.OnBlueWalls;
-            @YellowWalls.started -= instance.OnYellowWalls;
-            @YellowWalls.performed -= instance.OnYellowWalls;
-            @YellowWalls.canceled -= instance.OnYellowWalls;
+            @RandomRedWalls.started -= instance.OnRandomRedWalls;
+            @RandomRedWalls.performed -= instance.OnRandomRedWalls;
+            @RandomRedWalls.canceled -= instance.OnRandomRedWalls;
+            @RedWallsRemoval.started -= instance.OnRedWallsRemoval;
+            @RedWallsRemoval.performed -= instance.OnRedWallsRemoval;
+            @RedWallsRemoval.canceled -= instance.OnRedWallsRemoval;
+            @RandomBlueWalls.started -= instance.OnRandomBlueWalls;
+            @RandomBlueWalls.performed -= instance.OnRandomBlueWalls;
+            @RandomBlueWalls.canceled -= instance.OnRandomBlueWalls;
+            @BlueWallsRemoval.started -= instance.OnBlueWallsRemoval;
+            @BlueWallsRemoval.performed -= instance.OnBlueWallsRemoval;
+            @BlueWallsRemoval.canceled -= instance.OnBlueWallsRemoval;
+            @RandomYellowWalls.started -= instance.OnRandomYellowWalls;
+            @RandomYellowWalls.performed -= instance.OnRandomYellowWalls;
+            @RandomYellowWalls.canceled -= instance.OnRandomYellowWalls;
+            @YellowWallsRemoval.started -= instance.OnYellowWallsRemoval;
+            @YellowWallsRemoval.performed -= instance.OnYellowWallsRemoval;
+            @YellowWallsRemoval.canceled -= instance.OnYellowWallsRemoval;
             @SpawnSpeedChange.started -= instance.OnSpawnSpeedChange;
             @SpawnSpeedChange.performed -= instance.OnSpawnSpeedChange;
             @SpawnSpeedChange.canceled -= instance.OnSpawnSpeedChange;
@@ -396,9 +483,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IPlayerMapActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnRedWalls(InputAction.CallbackContext context);
-        void OnBlueWalls(InputAction.CallbackContext context);
-        void OnYellowWalls(InputAction.CallbackContext context);
+        void OnRandomRedWalls(InputAction.CallbackContext context);
+        void OnRedWallsRemoval(InputAction.CallbackContext context);
+        void OnRandomBlueWalls(InputAction.CallbackContext context);
+        void OnBlueWallsRemoval(InputAction.CallbackContext context);
+        void OnRandomYellowWalls(InputAction.CallbackContext context);
+        void OnYellowWallsRemoval(InputAction.CallbackContext context);
         void OnSpawnSpeedChange(InputAction.CallbackContext context);
         void OnBallSpeedChange(InputAction.CallbackContext context);
     }

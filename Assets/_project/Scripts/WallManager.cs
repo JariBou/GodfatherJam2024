@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _project.Scripts
 {
@@ -21,12 +23,18 @@ namespace _project.Scripts
         
         }
 
-        public void ActivateWallType(Wall.Type wallType)
+        public void ActivateRandomWallFromType(Wall.Type wallType)
         {
-            foreach (Wall wall in _walls)
+            List<Wall> wallTypes = _walls.Where(wall => wall.WallType == wallType && wall.IsInactive).ToList();
+            if (!wallTypes.Any()) return;
+            wallTypes[Random.Range(0, wallTypes.Count)].Activate();
+        }
+
+        public void DeactivateAllWallsFromType(Wall.Type wallType)
+        {
+            foreach (Wall wall in _walls.Where(wall => wall.WallType == wallType && !wall.IsInactive).ToList())
             {
-                if (wall.WallType == wallType) wall.SwitchState();
-                // else wall.Deactivate();
+                wall.Deactivate();
             }
         }
 
@@ -34,7 +42,7 @@ namespace _project.Scripts
         [Button]
         public void TestFunc()
         {
-            ActivateWallType(_wallType);
+            ActivateRandomWallFromType(_wallType);
         }
         
     }

@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Red Walls",
+                    "name": "Random Red Walls",
                     "type": "Button",
                     "id": "ca49fc5e-2b5b-4bc2-a9c1-70e01327dade",
                     "expectedControlType": "Button",
@@ -24,7 +24,16 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Blue Walls",
+                    "name": "Red Walls Removal",
+                    "type": "Button",
+                    "id": "cae04f85-0e2e-4522-bb42-a90bfdcc6e5e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Random Blue Walls",
                     "type": "Button",
                     "id": "eba972bf-4784-4035-bc0c-a8255bc20ea4",
                     "expectedControlType": "Button",
@@ -33,9 +42,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Yellow Walls",
+                    "name": "Blue Walls Removal",
+                    "type": "Button",
+                    "id": "bcf1a1a5-b432-4b24-ab7a-52f25767e92e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Random Yellow Walls",
                     "type": "Button",
                     "id": "e6cabf3e-0b3c-452d-b98d-3bfb997d3fff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Yellow Walls Removal",
+                    "type": "Button",
+                    "id": "5a371972-4fbf-4d17-9e2b-3fb8ad0e4862",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -123,7 +150,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Red Walls",
+                    "action": "Random Red Walls",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -134,7 +161,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Blue Walls",
+                    "action": "Random Blue Walls",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -145,7 +172,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Yellow Walls",
+                    "action": "Random Yellow Walls",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -214,6 +241,39 @@
                     "action": "BallSpeedChange",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d8dfa56d-be84-405f-90fe-1b88d66523b6",
+                    "path": "<Keyboard>/numpad4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Red Walls Removal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3dddda22-b852-42a6-9618-1bb61b9768ee",
+                    "path": "<Keyboard>/numpad5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Blue Walls Removal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6226877d-3876-415a-b6cf-5fa4b0f3e54f",
+                    "path": "<Keyboard>/numpad6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yellow Walls Removal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

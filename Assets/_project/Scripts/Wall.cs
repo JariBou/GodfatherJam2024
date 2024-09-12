@@ -14,6 +14,7 @@ namespace _project.Scripts
         private bool _isActivated = true;
 
         public Type WallType => _wallType;
+        public bool IsInactive => !_isActivated;
 
         private void OnCollisionEnter(Collision other)
         {

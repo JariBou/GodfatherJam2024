@@ -22,9 +22,12 @@ namespace _project.Scripts
             _inputs.PlayerMap.Move.canceled += _player.Move;
         
             // ================== Master Inputs ==================
-            _inputs.PlayerMap.RedWalls.performed += _ => { _wallManager.ActivateWallType(Wall.Type.Red); };
-            _inputs.PlayerMap.BlueWalls.performed += _ => { _wallManager.ActivateWallType(Wall.Type.Blue); };
-            _inputs.PlayerMap.YellowWalls.performed += _ => { _wallManager.ActivateWallType(Wall.Type.Yellow); };
+            _inputs.PlayerMap.RandomRedWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Red); };
+            _inputs.PlayerMap.RandomBlueWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Blue); };
+            _inputs.PlayerMap.RandomYellowWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Yellow); };
+            _inputs.PlayerMap.RedWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Red); };
+            _inputs.PlayerMap.BlueWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Blue); };
+            _inputs.PlayerMap.YellowWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Yellow); };
             _inputs.PlayerMap.SpawnSpeedChange.performed += ctx =>
             {
                 _ballManager.ModifySpawnSpeed(_spawnSpeedIncrement * Math.Sign(ctx.ReadValue<float>()));
