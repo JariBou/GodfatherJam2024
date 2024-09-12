@@ -107,6 +107,24 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MasterBallHell"",
+                    ""type"": ""Button"",
+                    ""id"": ""1c0ad190-3dd7-4d74-b4ae-b27b806312ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayerBallHell"",
+                    ""type"": ""Button"",
+                    ""id"": ""0fd6d556-60f0-4dc6-96ed-0878cc968c9f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -296,6 +314,28 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""Yellow Walls Removal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63c6eaf3-af74-4635-875a-52781ae1b47c"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MasterBallHell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3649e84f-7585-4e14-9ce6-46035d18722e"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerBallHell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -313,6 +353,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerMap_YellowWallsRemoval = m_PlayerMap.FindAction("Yellow Walls Removal", throwIfNotFound: true);
         m_PlayerMap_SpawnSpeedChange = m_PlayerMap.FindAction("SpawnSpeedChange", throwIfNotFound: true);
         m_PlayerMap_BallSpeedChange = m_PlayerMap.FindAction("BallSpeedChange", throwIfNotFound: true);
+        m_PlayerMap_MasterBallHell = m_PlayerMap.FindAction("MasterBallHell", throwIfNotFound: true);
+        m_PlayerMap_PlayerBallHell = m_PlayerMap.FindAction("PlayerBallHell", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -383,6 +425,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMap_YellowWallsRemoval;
     private readonly InputAction m_PlayerMap_SpawnSpeedChange;
     private readonly InputAction m_PlayerMap_BallSpeedChange;
+    private readonly InputAction m_PlayerMap_MasterBallHell;
+    private readonly InputAction m_PlayerMap_PlayerBallHell;
     public struct PlayerMapActions
     {
         private @PlayerInputs m_Wrapper;
@@ -396,6 +440,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @YellowWallsRemoval => m_Wrapper.m_PlayerMap_YellowWallsRemoval;
         public InputAction @SpawnSpeedChange => m_Wrapper.m_PlayerMap_SpawnSpeedChange;
         public InputAction @BallSpeedChange => m_Wrapper.m_PlayerMap_BallSpeedChange;
+        public InputAction @MasterBallHell => m_Wrapper.m_PlayerMap_MasterBallHell;
+        public InputAction @PlayerBallHell => m_Wrapper.m_PlayerMap_PlayerBallHell;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -432,6 +478,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @BallSpeedChange.started += instance.OnBallSpeedChange;
             @BallSpeedChange.performed += instance.OnBallSpeedChange;
             @BallSpeedChange.canceled += instance.OnBallSpeedChange;
+            @MasterBallHell.started += instance.OnMasterBallHell;
+            @MasterBallHell.performed += instance.OnMasterBallHell;
+            @MasterBallHell.canceled += instance.OnMasterBallHell;
+            @PlayerBallHell.started += instance.OnPlayerBallHell;
+            @PlayerBallHell.performed += instance.OnPlayerBallHell;
+            @PlayerBallHell.canceled += instance.OnPlayerBallHell;
         }
 
         private void UnregisterCallbacks(IPlayerMapActions instance)
@@ -463,6 +515,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @BallSpeedChange.started -= instance.OnBallSpeedChange;
             @BallSpeedChange.performed -= instance.OnBallSpeedChange;
             @BallSpeedChange.canceled -= instance.OnBallSpeedChange;
+            @MasterBallHell.started -= instance.OnMasterBallHell;
+            @MasterBallHell.performed -= instance.OnMasterBallHell;
+            @MasterBallHell.canceled -= instance.OnMasterBallHell;
+            @PlayerBallHell.started -= instance.OnPlayerBallHell;
+            @PlayerBallHell.performed -= instance.OnPlayerBallHell;
+            @PlayerBallHell.canceled -= instance.OnPlayerBallHell;
         }
 
         public void RemoveCallbacks(IPlayerMapActions instance)
@@ -491,5 +549,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnYellowWallsRemoval(InputAction.CallbackContext context);
         void OnSpawnSpeedChange(InputAction.CallbackContext context);
         void OnBallSpeedChange(InputAction.CallbackContext context);
+        void OnMasterBallHell(InputAction.CallbackContext context);
+        void OnPlayerBallHell(InputAction.CallbackContext context);
     }
 }
