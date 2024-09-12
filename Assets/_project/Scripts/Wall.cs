@@ -68,27 +68,5 @@ namespace _project.Scripts
             if (_isActivated) Deactivate();
             else Activate();
         }
-
-        // ====================== TEMP ======================
-        private void OnValidate()
-        {
-            switch (_wallType)
-            {
-                case Type.Red:
-                    GetComponent<MeshRenderer>().sharedMaterial.color = Color.red;
-                    break;
-                case Type.Blue:
-                    GetComponent<MeshRenderer>().sharedMaterial.color = Color.blue;
-                    break;
-                case Type.Yellow:
-                    GetComponent<MeshRenderer>().sharedMaterial.color = Color.yellow;
-                    break;
-                case Type.Bouncy:
-                    GetComponent<MeshRenderer>().sharedMaterial.color = Color.gray;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
     }
 }
