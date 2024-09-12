@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
-using Unity.UI;
 using Image = UnityEngine.UI.Image;
 
 public class VFXManager : MonoBehaviour

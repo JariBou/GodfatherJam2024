@@ -46,6 +46,26 @@ namespace _project.Scripts
             _speed = ballSpeed;
             UpdateDir(ballDir);
             _ballType = ballType;
+            gameObject.layer = ballType switch
+            {
+                Type.Player => 7 // Balls layer 
+                ,
+                Type.Master => 6 // MAsterBalls layer, not a fan of hardcoding but for now this will do
+                ,
+                _ => throw new ArgumentOutOfRangeException()
+            };
+            
+            // ================ TEMP ================
+            switch (ballType)
+            {
+                case Type.Player:
+                    break;
+                case Type.Master:
+                    GetComponent<MeshRenderer>().material.color = Color.magenta;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(ballType), ballType, null);
+            }
         }
 
         public void DestroyBall()
