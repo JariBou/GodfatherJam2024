@@ -46,7 +46,7 @@ namespace _project.Scripts
         // Start is called before the first frame update
         void Start()
         {
-            _spawnPhaseRoutine = StartCoroutine(DoSpawnPhaseCooldown());
+            StartSpawning();
         }
 
         private void AttemptSpawn(int attemptCount = 0)
@@ -114,6 +114,18 @@ namespace _project.Scripts
         {
             yield return new WaitForSeconds(_cooldownPerSpawnAttempt + Random.Range(-_cooldownPerSpawnAttemptRandomRange, _cooldownPerSpawnAttemptRandomRange));
             AttemptSpawn();
+        }
+
+        public void StopSpawning()
+        {
+            _stopFlag = true;
+            if (_spawnPhaseRoutine != null) StopCoroutine(_spawnPhaseRoutine);
+        }
+        
+        public void StartSpawning()
+        {
+            _stopFlag = false;
+            _spawnPhaseRoutine = StartCoroutine(DoSpawnPhaseCooldown());
         }
 
         #region Bullet Heeeeell

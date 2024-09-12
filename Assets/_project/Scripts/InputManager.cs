@@ -25,41 +25,76 @@ namespace _project.Scripts
             _inputs.PlayerMap.Move.canceled += _player.Move;
         
             // ================== Master Inputs ==================
-            _inputs.PlayerMap.RandomRedWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Red); };
-            _inputs.PlayerMap.RandomBlueWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Blue); };
-            _inputs.PlayerMap.RandomYellowWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Yellow); };
-            _inputs.PlayerMap.RedWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Red); };
-            _inputs.PlayerMap.BlueWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Blue); };
-            _inputs.PlayerMap.YellowWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Yellow); };
+            _inputs.MasterMap.RandomRedWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Red); };
+            _inputs.MasterMap.RandomBlueWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Blue); };
+            _inputs.MasterMap.RandomYellowWalls.performed += _ => { _wallManager.ActivateRandomWallFromType(Wall.Type.Yellow); };
+            _inputs.MasterMap.RedWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Red); };
+            _inputs.MasterMap.BlueWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Blue); };
+            _inputs.MasterMap.YellowWallsRemoval.performed += _ => { _wallManager.DeactivateAllWallsFromType(Wall.Type.Yellow); };
             
-            _inputs.PlayerMap.SpawnSpeedChange.performed += ctx =>
+            _inputs.MasterMap.SpawnSpeedChange.performed += ctx =>
             {
                 _ballManager.ModifySpawnSpeed(_spawnSpeedIncrement * Math.Sign(ctx.ReadValue<float>()));
             };
-            _inputs.PlayerMap.BallSpeedChange.performed += ctx =>
+            _inputs.MasterMap.BallSpeedChange.performed += ctx =>
             {
                 _ballManager.ModifyBallSpeed(_ballSpeedIncrement * Math.Sign(ctx.ReadValue<float>()));
             };
 
-            _inputs.PlayerMap.MasterBallHell.performed += _ =>
+            _inputs.MasterMap.MasterBallHell.performed += _ =>
             {
                 _ballManager.DoBallHell(Ball.Type.Master, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
-            _inputs.PlayerMap.PlayerBallHell.performed += _ =>
+            _inputs.MasterMap.PlayerBallHell.performed += _ =>
             {
                 _ballManager.DoBallHell(Ball.Type.Player, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
         }
+
+        #region Inputs Enabling/disabling
+
+        public void EnableInputs()
+        {
+            EnableInputs();
+            EnableMasterInput();
+        }
+
+        public void DisableInputs()
+        {
+            DisablePlayerInput();
+            DisableMasterInput();
+        }
         
+        public void EnablePlayerInput()
+        {
+            _inputs.PlayerMap.Enable();
+        }
+        
+        public void DisablePlayerInput()
+        {
+            _inputs.PlayerMap.Disable();
+        }
+
+        public void EnableMasterInput()
+        {
+            _inputs.MasterMap.Enable();
+        }
+        
+        public void DisableMasterInput()
+        {
+            _inputs.MasterMap.Disable();
+        }
+
+        #endregion
         
         private void OnEnable()
         {
-            _inputs.PlayerMap.Enable();
+            EnableInputs();
         }
 
         private void OnDisable()
         {
-            _inputs.PlayerMap.Disable();
+            DisableInputs();
         }
     }
 }

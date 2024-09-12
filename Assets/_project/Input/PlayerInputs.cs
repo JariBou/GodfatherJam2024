@@ -24,18 +24,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputs"",
     ""maps"": [
         {
-            ""name"": ""PlayerMap"",
+            ""name"": ""MasterMap"",
             ""id"": ""ce9fa691-7eb9-4e7b-8c07-6e42568dd062"",
             ""actions"": [
-                {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""e870c0b9-cb60-4694-982e-dd8c51bd1fe1"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
                 {
                     ""name"": ""Random Red Walls"",
                     ""type"": ""Button"",
@@ -128,61 +119,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""c1ff549d-b9c7-49ac-8a05-0a57ea93b27f"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""759018d0-2055-47f8-a69b-bce72ab9bfd1"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""d2ed1ca3-5d75-4d7d-b48e-47fbb0a1ae19"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""dfc3afa4-c48c-4bd5-8b80-6b5f70d70a84"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""ceed2289-3325-4d74-8fed-a1d888e8609e"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
                 {
                     ""name"": """",
                     ""id"": ""983b64b9-9337-4782-9999-cd9b55a2aa9c"",
@@ -338,23 +274,97 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PlayerMap"",
+            ""id"": ""0839a0c0-5347-4221-a330-07baca88839e"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""7eb26910-7108-452e-ac8c-e8fe350f084e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""e821cd0b-f87b-48f5-8427-95d830b0528c"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3d05a110-25c5-46a8-aa6d-393266123772"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c1a833dd-0033-4aae-8ee6-e61f15fdf4a7"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""6203eb92-b928-43a4-b86d-eece7a288706"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""62ac56b3-c73b-4984-889a-1ead2ef1e26d"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
+        // MasterMap
+        m_MasterMap = asset.FindActionMap("MasterMap", throwIfNotFound: true);
+        m_MasterMap_RandomRedWalls = m_MasterMap.FindAction("Random Red Walls", throwIfNotFound: true);
+        m_MasterMap_RedWallsRemoval = m_MasterMap.FindAction("Red Walls Removal", throwIfNotFound: true);
+        m_MasterMap_RandomBlueWalls = m_MasterMap.FindAction("Random Blue Walls", throwIfNotFound: true);
+        m_MasterMap_BlueWallsRemoval = m_MasterMap.FindAction("Blue Walls Removal", throwIfNotFound: true);
+        m_MasterMap_RandomYellowWalls = m_MasterMap.FindAction("Random Yellow Walls", throwIfNotFound: true);
+        m_MasterMap_YellowWallsRemoval = m_MasterMap.FindAction("Yellow Walls Removal", throwIfNotFound: true);
+        m_MasterMap_SpawnSpeedChange = m_MasterMap.FindAction("SpawnSpeedChange", throwIfNotFound: true);
+        m_MasterMap_BallSpeedChange = m_MasterMap.FindAction("BallSpeedChange", throwIfNotFound: true);
+        m_MasterMap_MasterBallHell = m_MasterMap.FindAction("MasterBallHell", throwIfNotFound: true);
+        m_MasterMap_PlayerBallHell = m_MasterMap.FindAction("PlayerBallHell", throwIfNotFound: true);
         // PlayerMap
         m_PlayerMap = asset.FindActionMap("PlayerMap", throwIfNotFound: true);
         m_PlayerMap_Move = m_PlayerMap.FindAction("Move", throwIfNotFound: true);
-        m_PlayerMap_RandomRedWalls = m_PlayerMap.FindAction("Random Red Walls", throwIfNotFound: true);
-        m_PlayerMap_RedWallsRemoval = m_PlayerMap.FindAction("Red Walls Removal", throwIfNotFound: true);
-        m_PlayerMap_RandomBlueWalls = m_PlayerMap.FindAction("Random Blue Walls", throwIfNotFound: true);
-        m_PlayerMap_BlueWallsRemoval = m_PlayerMap.FindAction("Blue Walls Removal", throwIfNotFound: true);
-        m_PlayerMap_RandomYellowWalls = m_PlayerMap.FindAction("Random Yellow Walls", throwIfNotFound: true);
-        m_PlayerMap_YellowWallsRemoval = m_PlayerMap.FindAction("Yellow Walls Removal", throwIfNotFound: true);
-        m_PlayerMap_SpawnSpeedChange = m_PlayerMap.FindAction("SpawnSpeedChange", throwIfNotFound: true);
-        m_PlayerMap_BallSpeedChange = m_PlayerMap.FindAction("BallSpeedChange", throwIfNotFound: true);
-        m_PlayerMap_MasterBallHell = m_PlayerMap.FindAction("MasterBallHell", throwIfNotFound: true);
-        m_PlayerMap_PlayerBallHell = m_PlayerMap.FindAction("PlayerBallHell", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -413,47 +423,42 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // PlayerMap
-    private readonly InputActionMap m_PlayerMap;
-    private List<IPlayerMapActions> m_PlayerMapActionsCallbackInterfaces = new List<IPlayerMapActions>();
-    private readonly InputAction m_PlayerMap_Move;
-    private readonly InputAction m_PlayerMap_RandomRedWalls;
-    private readonly InputAction m_PlayerMap_RedWallsRemoval;
-    private readonly InputAction m_PlayerMap_RandomBlueWalls;
-    private readonly InputAction m_PlayerMap_BlueWallsRemoval;
-    private readonly InputAction m_PlayerMap_RandomYellowWalls;
-    private readonly InputAction m_PlayerMap_YellowWallsRemoval;
-    private readonly InputAction m_PlayerMap_SpawnSpeedChange;
-    private readonly InputAction m_PlayerMap_BallSpeedChange;
-    private readonly InputAction m_PlayerMap_MasterBallHell;
-    private readonly InputAction m_PlayerMap_PlayerBallHell;
-    public struct PlayerMapActions
+    // MasterMap
+    private readonly InputActionMap m_MasterMap;
+    private List<IMasterMapActions> m_MasterMapActionsCallbackInterfaces = new List<IMasterMapActions>();
+    private readonly InputAction m_MasterMap_RandomRedWalls;
+    private readonly InputAction m_MasterMap_RedWallsRemoval;
+    private readonly InputAction m_MasterMap_RandomBlueWalls;
+    private readonly InputAction m_MasterMap_BlueWallsRemoval;
+    private readonly InputAction m_MasterMap_RandomYellowWalls;
+    private readonly InputAction m_MasterMap_YellowWallsRemoval;
+    private readonly InputAction m_MasterMap_SpawnSpeedChange;
+    private readonly InputAction m_MasterMap_BallSpeedChange;
+    private readonly InputAction m_MasterMap_MasterBallHell;
+    private readonly InputAction m_MasterMap_PlayerBallHell;
+    public struct MasterMapActions
     {
         private @PlayerInputs m_Wrapper;
-        public PlayerMapActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_PlayerMap_Move;
-        public InputAction @RandomRedWalls => m_Wrapper.m_PlayerMap_RandomRedWalls;
-        public InputAction @RedWallsRemoval => m_Wrapper.m_PlayerMap_RedWallsRemoval;
-        public InputAction @RandomBlueWalls => m_Wrapper.m_PlayerMap_RandomBlueWalls;
-        public InputAction @BlueWallsRemoval => m_Wrapper.m_PlayerMap_BlueWallsRemoval;
-        public InputAction @RandomYellowWalls => m_Wrapper.m_PlayerMap_RandomYellowWalls;
-        public InputAction @YellowWallsRemoval => m_Wrapper.m_PlayerMap_YellowWallsRemoval;
-        public InputAction @SpawnSpeedChange => m_Wrapper.m_PlayerMap_SpawnSpeedChange;
-        public InputAction @BallSpeedChange => m_Wrapper.m_PlayerMap_BallSpeedChange;
-        public InputAction @MasterBallHell => m_Wrapper.m_PlayerMap_MasterBallHell;
-        public InputAction @PlayerBallHell => m_Wrapper.m_PlayerMap_PlayerBallHell;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
+        public MasterMapActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @RandomRedWalls => m_Wrapper.m_MasterMap_RandomRedWalls;
+        public InputAction @RedWallsRemoval => m_Wrapper.m_MasterMap_RedWallsRemoval;
+        public InputAction @RandomBlueWalls => m_Wrapper.m_MasterMap_RandomBlueWalls;
+        public InputAction @BlueWallsRemoval => m_Wrapper.m_MasterMap_BlueWallsRemoval;
+        public InputAction @RandomYellowWalls => m_Wrapper.m_MasterMap_RandomYellowWalls;
+        public InputAction @YellowWallsRemoval => m_Wrapper.m_MasterMap_YellowWallsRemoval;
+        public InputAction @SpawnSpeedChange => m_Wrapper.m_MasterMap_SpawnSpeedChange;
+        public InputAction @BallSpeedChange => m_Wrapper.m_MasterMap_BallSpeedChange;
+        public InputAction @MasterBallHell => m_Wrapper.m_MasterMap_MasterBallHell;
+        public InputAction @PlayerBallHell => m_Wrapper.m_MasterMap_PlayerBallHell;
+        public InputActionMap Get() { return m_Wrapper.m_MasterMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerMapActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerMapActions instance)
+        public static implicit operator InputActionMap(MasterMapActions set) { return set.Get(); }
+        public void AddCallbacks(IMasterMapActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Add(instance);
-            @Move.started += instance.OnMove;
-            @Move.performed += instance.OnMove;
-            @Move.canceled += instance.OnMove;
+            if (instance == null || m_Wrapper.m_MasterMapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MasterMapActionsCallbackInterfaces.Add(instance);
             @RandomRedWalls.started += instance.OnRandomRedWalls;
             @RandomRedWalls.performed += instance.OnRandomRedWalls;
             @RandomRedWalls.canceled += instance.OnRandomRedWalls;
@@ -486,11 +491,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @PlayerBallHell.canceled += instance.OnPlayerBallHell;
         }
 
-        private void UnregisterCallbacks(IPlayerMapActions instance)
+        private void UnregisterCallbacks(IMasterMapActions instance)
         {
-            @Move.started -= instance.OnMove;
-            @Move.performed -= instance.OnMove;
-            @Move.canceled -= instance.OnMove;
             @RandomRedWalls.started -= instance.OnRandomRedWalls;
             @RandomRedWalls.performed -= instance.OnRandomRedWalls;
             @RandomRedWalls.canceled -= instance.OnRandomRedWalls;
@@ -523,6 +525,52 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @PlayerBallHell.canceled -= instance.OnPlayerBallHell;
         }
 
+        public void RemoveCallbacks(IMasterMapActions instance)
+        {
+            if (m_Wrapper.m_MasterMapActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMasterMapActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MasterMapActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MasterMapActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MasterMapActions @MasterMap => new MasterMapActions(this);
+
+    // PlayerMap
+    private readonly InputActionMap m_PlayerMap;
+    private List<IPlayerMapActions> m_PlayerMapActionsCallbackInterfaces = new List<IPlayerMapActions>();
+    private readonly InputAction m_PlayerMap_Move;
+    public struct PlayerMapActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public PlayerMapActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_PlayerMap_Move;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerMapActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerMapActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+        }
+
+        private void UnregisterCallbacks(IPlayerMapActions instance)
+        {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+        }
+
         public void RemoveCallbacks(IPlayerMapActions instance)
         {
             if (m_Wrapper.m_PlayerMapActionsCallbackInterfaces.Remove(instance))
@@ -538,9 +586,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         }
     }
     public PlayerMapActions @PlayerMap => new PlayerMapActions(this);
-    public interface IPlayerMapActions
+    public interface IMasterMapActions
     {
-        void OnMove(InputAction.CallbackContext context);
         void OnRandomRedWalls(InputAction.CallbackContext context);
         void OnRedWallsRemoval(InputAction.CallbackContext context);
         void OnRandomBlueWalls(InputAction.CallbackContext context);
@@ -551,5 +598,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnBallSpeedChange(InputAction.CallbackContext context);
         void OnMasterBallHell(InputAction.CallbackContext context);
         void OnPlayerBallHell(InputAction.CallbackContext context);
+    }
+    public interface IPlayerMapActions
+    {
+        void OnMove(InputAction.CallbackContext context);
     }
 }

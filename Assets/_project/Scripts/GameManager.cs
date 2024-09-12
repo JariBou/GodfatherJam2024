@@ -9,6 +9,8 @@ namespace _project.Scripts
         [SerializeField] private int _maxScore = 100;
         [SerializeField] private int _startingScore = 50;
         [SerializeField] private VFXManager _vfxManager;
+        [SerializeField] private BallManager _ballManager;
+        [SerializeField] private InputManager _inputManager;
 
         private int _score;
 
@@ -38,8 +40,26 @@ namespace _project.Scripts
                     throw new ArgumentOutOfRangeException(nameof(ballType), ballType, null);
             }
             _vfxManager.UpdateSlider(GetScorePercent());
+            CheckEndOfGame();
             // TODO
             // Check win con and update displays
+        }
+
+        private void CheckEndOfGame()
+        {
+            if (_score <= 0)
+            {
+                _inputManager.DisableInputs();
+                _ballManager.StopSpawning();
+                Debug.Log("LOOOST");
+                // Lost
+            } else if (_score >= _maxScore)
+            {
+                _inputManager.DisableMasterInput();
+                _ballManager.StopSpawning();
+                Debug.Log("WOOOOON");
+                // Won
+            }
         }
         
         private void OnEnable()
