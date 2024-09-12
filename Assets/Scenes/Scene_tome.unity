@@ -1316,7 +1316,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802973935}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1810,7 +1810,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409461674}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2097,7 +2097,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629389581}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2304,7 +2304,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799487558}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2395,6 +2395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InvisiWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 400518163651168897, guid: ad2f6800b30ab0a428f2406a99cd263e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8984759056569371398, guid: ad2f6800b30ab0a428f2406a99cd263e,
         type: 3}
