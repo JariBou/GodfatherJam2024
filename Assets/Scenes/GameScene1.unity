@@ -3776,6 +3776,18 @@ PrefabInstance:
       propertyPath: _maxSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _masterBallPickupParticle
+      value: 
+      objectReference: {fileID: 2265639565674635405, guid: d9eeb9cb7ce62594ba17515cb5bd9a9b,
+        type: 3}
+    - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
+        type: 3}
+      propertyPath: _playerBallPickupParticle
+      value: 
+      objectReference: {fileID: 2265639565674635405, guid: 9656943503a34a04c962872669af47fc,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
