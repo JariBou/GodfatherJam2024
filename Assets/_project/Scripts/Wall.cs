@@ -44,7 +44,8 @@ namespace _project.Scripts
                 _isActivated = true;
                 return;
             }
-            float height = GetComponent<MeshRenderer>().bounds.extents.y * 2;
+            // float height = GetComponent<MeshRenderer>().bounds.extents.y * 2;
+            float height = 2000;
             transform.position += new Vector3(0, height, 0);
             _isActivated = true;
             //TODO + animation and stuff
@@ -57,7 +58,8 @@ namespace _project.Scripts
                 _isActivated = false;
                 return;
             }
-            float height = GetComponent<MeshRenderer>().bounds.extents.y * 2;
+            // float height = GetComponent<MeshRenderer>().bounds.extents.y * 2;
+            float height = 2000;
             transform.position -= new Vector3(0, height, 0);
             _isActivated = false;
             //TODO + animation and stuff

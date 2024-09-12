@@ -60,7 +60,7 @@ Material:
     - _Float_1: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SliderPercentage: 0.5
+    - _SliderPercentage: 0.18
     m_Colors:
     - _Color: {r: 0.3803922, g: 0.9321471, b: 1, a: 0}
     - _Color_1: {r: 0.9245283, g: 0.39286977, b: 0.13519046, a: 0}
