@@ -43,10 +43,12 @@ namespace _project.Scripts
 
             _inputs.MasterMap.MasterBallHell.performed += _ =>
             {
+                _wallManager.ActivateAllWalls();
                 _ballManager.DoBallHell(Ball.Type.Master, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
             _inputs.MasterMap.PlayerBallHell.performed += _ =>
             {
+                _wallManager.DeactivateAllWalls();
                 _ballManager.DoBallHell(Ball.Type.Player, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
         }

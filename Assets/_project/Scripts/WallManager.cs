@@ -37,6 +37,14 @@ namespace _project.Scripts
                 wall.Deactivate();
             }
         }
+        
+        public void ActivateAllWallsFromType(Wall.Type wallType)
+        {
+            foreach (Wall wall in _walls.Where(wall => wall.WallType == wallType && wall.IsInactive).ToList())
+            {
+                wall.Activate();
+            }
+        }
 
         [SerializeField] private Wall.Type _wallType;
         [Button]
@@ -50,6 +58,20 @@ namespace _project.Scripts
             List<Wall> inactiveWalls = _walls.Where(wall => wall.IsInactive).ToList();
             if (!inactiveWalls.Any()) return;
             inactiveWalls[Random.Range(0, inactiveWalls.Count)].Activate();
+        }
+
+        public void ActivateAllWalls()
+        {
+            ActivateAllWallsFromType(Wall.Type.Red);
+            ActivateAllWallsFromType(Wall.Type.Blue);
+            ActivateAllWallsFromType(Wall.Type.Yellow);
+        }
+        
+        public void DeactivateAllWalls()
+        {
+            DeactivateAllWallsFromType(Wall.Type.Red);
+            DeactivateAllWallsFromType(Wall.Type.Blue);
+            DeactivateAllWallsFromType(Wall.Type.Yellow);
         }
     }
 }

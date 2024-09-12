@@ -29,9 +29,12 @@ namespace _project.Scripts
 
         private void Awake()
         {
-            _startingPosition = transform.position;
-            _snapshotTargetPosition = _targetTransform.position;
-            Destroy(_targetTransform.gameObject);
+            if (_moves)
+            {
+                _startingPosition = transform.position;
+                _snapshotTargetPosition = _targetTransform.position;
+                Destroy(_targetTransform.gameObject);
+            }
         }
 
         private void Update()
@@ -40,7 +43,6 @@ namespace _project.Scripts
             {
                 float pingPongVal = Mathf.PingPong(_internalTimer, 1);
                 float lerpT = _movementCurve.Evaluate(pingPongVal);
-                Debug.Log(lerpT);
                 transform.position =
                     Vector3.Lerp(_startingPosition, _snapshotTargetPosition, lerpT);
                 _internalTimer += Time.deltaTime * _movementSpeed;
