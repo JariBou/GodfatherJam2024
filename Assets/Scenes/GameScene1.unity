@@ -623,6 +623,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a31bd1e865b6f4fb482ae924378c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &353360617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 628785066066741226, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419778028518422612, guid: 647d909578b976c498a3f61b0577e379,
+        type: 3}
+      propertyPath: m_Name
+      value: KillZone
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 647d909578b976c498a3f61b0577e379, type: 3}
 --- !u!1001 &441238511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1396,6 +1464,7 @@ GameObject:
   - component: {fileID: 729256564}
   - component: {fileID: 729256563}
   - component: {fileID: 729256566}
+  - component: {fileID: 729256567}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1522,6 +1591,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &729256567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729256562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cea1a158f9a91148b250111c6e326a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1220841732}
+  _lerpFactor: 0.1
 --- !u!1 &808512249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,6 +3678,11 @@ PrefabInstance:
       propertyPath: _gameOverScreenScript
       value: 
       objectReference: {fileID: 527000297}
+    - target: {fileID: 7131562298201224748, guid: e759e7103227f964eb2104b9d0a6eb46,
+        type: 3}
+      propertyPath: _timeScore
+      value: 
+      objectReference: {fileID: 1138912925}
     - target: {fileID: 7938344747629354714, guid: e759e7103227f964eb2104b9d0a6eb46,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4017,8 +4105,14 @@ MonoBehaviour:
       Value: {x: 0, y: 0, z: 15}
   _target: {fileID: 1776226641015729368}
   _targetOffsetRadiusMax: 10
-  _ballPrefab: {fileID: 2265639565674635405, guid: 9656943503a34a04c962872669af47fc,
-    type: 3}
+  _prefabsDic:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 2265639565674635405, guid: 9656943503a34a04c962872669af47fc,
+        type: 3}
+    - Key: 1
+      Value: {fileID: 2265639565674635405, guid: d9eeb9cb7ce62594ba17515cb5bd9a9b,
+        type: 3}
   _ballSpeed: 10
   _masterBallRatio: 0.6
 --- !u!4 &4200966517804284900
@@ -4677,3 +4771,4 @@ SceneRoots:
   - {fileID: 824838695}
   - {fileID: 441238511}
   - {fileID: 1940921018}
+  - {fileID: 353360617}
