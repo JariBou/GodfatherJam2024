@@ -22,7 +22,7 @@ namespace _project.Scripts
         [Header("Target Point Params"), SerializeField] private Transform _target;
         [FormerlySerializedAs("_offsetRadiusMax")] [SerializeField] private float _targetOffsetRadiusMax;
         
-        [Header("Ball Params"), SerializeField] private GameObject _ballPrefab;
+        [SerializeField] private SerializedDictionary<Ball.Type, GameObject> _prefabsDic;
         [SerializeField] private float _ballSpeed = 5f;
         [SerializeField, Tooltip("Percent of balls generated that will 'hurt' the player")] private float _masterBallRatio = .6f;
         // Can easily add an animation curve to make it more probable to be closer to center and stuff
@@ -93,7 +93,7 @@ namespace _project.Scripts
         
         private void GenerateBall(Vector3 spawnPoint, Ball.Type ballType)
         {
-            Ball spawnedBall = Instantiate(_ballPrefab, spawnPoint, Quaternion.identity, transform).GetComponent<Ball>();
+            Ball spawnedBall = Instantiate(_prefabsDic[ballType], spawnPoint, Quaternion.identity, transform).GetComponent<Ball>();
             Vector3 targetPos = _target.position + new Vector3(Random.Range(-_targetOffsetRadiusMax, _targetOffsetRadiusMax), 0,
                 Random.Range(-_targetOffsetRadiusMax, _targetOffsetRadiusMax));
             Vector3 ballDir = targetPos - spawnPoint;
@@ -221,11 +221,6 @@ namespace _project.Scripts
         private void OnDisable()
         {
             GameManager.GameOver -= OnGameOver;
-        }
-
-        private void OnValidate()
-        {
-            if (_ballPrefab != null && _ballPrefab.GetComponent<Ball>() == null) _ballPrefab = null;
         }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1623780193986040579}
   - component: {fileID: 3966191497185492919}
   m_Layer: 7
-  m_Name: Ball Test
+  m_Name: MasterBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &6561939210191611807
 MonoBehaviour:

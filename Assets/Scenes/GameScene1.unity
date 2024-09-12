@@ -3709,8 +3709,14 @@ MonoBehaviour:
       Value: {x: 0, y: 0, z: 15}
   _target: {fileID: 1776226641015729368}
   _targetOffsetRadiusMax: 10
-  _ballPrefab: {fileID: 2265639565674635405, guid: 9656943503a34a04c962872669af47fc,
-    type: 3}
+  _prefabsDic:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 2265639565674635405, guid: 9656943503a34a04c962872669af47fc,
+        type: 3}
+    - Key: 1
+      Value: {fileID: 2265639565674635405, guid: d9eeb9cb7ce62594ba17515cb5bd9a9b,
+        type: 3}
   _ballSpeed: 10
   _masterBallRatio: 0.6
 --- !u!4 &4200966517804284900

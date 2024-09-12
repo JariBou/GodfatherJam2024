@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _project.Scripts
 {
@@ -18,6 +19,7 @@ namespace _project.Scripts
         [SerializeField] private float _destroyDelay = .0f;
         
         private Vector3 _ballVelocity;
+        private Vector3 _angVelocity;
 
         public Type BallType => _ballType;
 
@@ -32,6 +34,7 @@ namespace _project.Scripts
         private void FixedUpdate()
         {
             _rb.velocity = new Vector3(_ballVelocity.x, _rb.velocity.y, _ballVelocity.z);
+            _rb.angularVelocity = _angVelocity;
         }
 
         public void UpdateDir(Vector3 newDir)
@@ -59,6 +62,7 @@ namespace _project.Scripts
             switch (ballType)
             {
                 case Type.Player:
+                    _angVelocity = Vector3.up * Random.Range(1f, 5f) * Mathf.Sign(Random.Range(-1f, 1f));
                     break;
                 case Type.Master:
                     GetComponent<MeshRenderer>().material.color = Color.magenta;
