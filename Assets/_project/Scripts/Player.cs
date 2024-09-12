@@ -1,4 +1,5 @@
 using System;
+using _project.Scripts.Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -13,7 +14,9 @@ namespace _project.Scripts
         [FormerlySerializedAs("_speed")] [SerializeField, Range(0, 400)] private float _maxSpeed = 200f;
         [SerializeField, Range(1f, 5f)] private float _angularSpeed = 3f;
         [SerializeField] private GameObject _playerBallPickupParticle; 
+        [SerializeField] private AudioClip _playerBallPickupSound; 
         [SerializeField] private GameObject _masterBallPickupParticle; 
+        [SerializeField] private AudioClip _masterBallPickupSound; 
         
         private Vector3 _moveVec;
         private Transform _startTransform;
@@ -51,9 +54,11 @@ namespace _project.Scripts
             {
                 case Ball.Type.Player:
                     Instantiate(_playerBallPickupParticle, transform.position, Quaternion.identity);
+                    AudioManager.PlayClip(_playerBallPickupSound);
                     break;
                 case Ball.Type.Master:
                     Instantiate(_masterBallPickupParticle, transform.position, Quaternion.identity);
+                    AudioManager.PlayClip(_masterBallPickupSound);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
