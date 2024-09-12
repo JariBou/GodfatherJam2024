@@ -2,12 +2,29 @@
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace _project.Scripts
 {
-    public enum GameEvent
+    
+    public enum GameEventType
     {
         RandomWallRaise
+    }
+
+     [Serializable]
+    public class GameEvent
+    {
+
+        [SerializeField] private GameEventType _gameEventType;
+        [SerializeField, Range(0f, 1f)] private float _probability;
+        [SerializeField] private float _strength;
+        [SerializeField] private float _duration;
+
+        public GameEventType gameEventType => _gameEventType;
+        public float probability => _probability;
+        public float strength => _strength;
+        public float duration => _duration;
     }
     
     public class EventManager : MonoBehaviour
@@ -25,11 +42,14 @@ namespace _project.Scripts
             Debug.Log($"Checking events for {second}s");
             if (!_events.TryGetValue(second, out List<GameEvent> events)) return;
             
+            
             foreach (GameEvent gameEvent in events)
             {
-                switch (gameEvent)
+                if (Random.Range(0f, 1f) > gameEvent.probability) return;
+
+                switch (gameEvent.gameEventType)
                 {
-                    case GameEvent.RandomWallRaise:
+                    case GameEventType.RandomWallRaise:
                         _wallManager.ActivateRandomWall();
                         break;
                     default:
