@@ -5,11 +5,12 @@ namespace _project.Scripts
 {
     public class InputManager : MonoBehaviour
     {
-        [SerializeField] private WallManager _wallManager;
+        [Header("Refs"), SerializeField] private WallManager _wallManager;
         [SerializeField] private Player _player;
         [SerializeField] private BallManager _ballManager;
-        [SerializeField] private float _spawnSpeedIncrement = .1f;
+        [Header("Master inputs params"),SerializeField] private float _spawnSpeedIncrement = .1f;
         [SerializeField] private float _ballSpeedIncrement = .1f;
+        
         private PlayerInputs _inputs;
 
         private void Awake()

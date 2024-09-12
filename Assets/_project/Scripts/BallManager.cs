@@ -11,25 +11,28 @@ namespace _project.Scripts
 {
     public class BallManager : MonoBehaviour
     {
-        [SerializeField] private GameObject _ballPrefab;
-        [SerializeField] private float _cooldownPerSpawn = 3f;
+        [Header("Spawnpoints Params"), SerializeField] private float _cooldownPerSpawn = 3f;
         [SerializeField] private float _cooldownPerSpawnRandomRange = .0f;
         [SerializeField] private float _ballsPerSpawnPhase = 1;
         [SerializeField] private float _cooldownPerSpawnAttempt = 0.5f;
         [SerializeField] private float _cooldownPerSpawnAttemptRandomRange = .0f;
+        [SerializeField, SerializedDictionary("Spawnpoint", "Offset Range")]
+        private SerializedDictionary<Transform, Vector3> _spawnpointsOffsetDic;
+        
+        [Header("Target Point Params"), SerializeField] private Transform _target;
+        [FormerlySerializedAs("_offsetRadiusMax")] [SerializeField] private float _targetOffsetRadiusMax;
+        
+        [Header("Ball Params"), SerializeField] private GameObject _ballPrefab;
         [SerializeField] private float _ballSpeed = 5f;
-        [SerializeField] private Transform _target;
-        [SerializeField] private float _offsetRadiusMax;
+        [SerializeField, Tooltip("Percent of balls generated that will 'hurt' the player")] private float _masterBallRatio = .6f;
         // Can easily add an animation curve to make it more probable to be closer to center and stuff
         //[SerializeField] private List<Transform> _spawnPoints; 
 
-        [SerializeField, SerializedDictionary("Spawnpoint", "Offset Range")]
-        private SerializedDictionary<Transform, Vector3> _spawnpointsOffsetDic;
 
         private float _internalTimer;
         private float _spawnAttemptInternalTimer;
         private float _spawnAttemptInternalCounter;
-        private RaycastHit[] _hits = {};
+        private readonly RaycastHit[] _hits = {};
         
         // Master Variables
         private float _spawnCooldownMultiplier = 1f;
@@ -81,10 +84,13 @@ namespace _project.Scripts
         private void GenerateBall(Vector3 spawnPoint)
         {
             Ball spawnedBall = Instantiate(_ballPrefab, spawnPoint, Quaternion.identity, transform).GetComponent<Ball>();
-            Vector3 targetPos = _target.position + new Vector3(Random.Range(-_offsetRadiusMax, _offsetRadiusMax), 0,
-                Random.Range(-_offsetRadiusMax, _offsetRadiusMax));
+            Vector3 targetPos = _target.position + new Vector3(Random.Range(-_targetOffsetRadiusMax, _targetOffsetRadiusMax), 0,
+                Random.Range(-_targetOffsetRadiusMax, _targetOffsetRadiusMax));
             Vector3 ballDir = targetPos - spawnPoint;
-            spawnedBall.Config(ballDir, _ballSpeed * _ballSpeedMultiplier, Ball.Type.Player);
+
+            Ball.Type spawnedBallType = Random.Range(0f, 1f) < _masterBallRatio ? Ball.Type.Master : Ball.Type.Player;
+            
+            spawnedBall.Config(ballDir, _ballSpeed * _ballSpeedMultiplier, spawnedBallType);
         }
 
         private IEnumerator DoSpawnPhaseCooldown()

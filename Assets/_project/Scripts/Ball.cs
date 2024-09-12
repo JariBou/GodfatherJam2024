@@ -46,6 +46,14 @@ namespace _project.Scripts
             _speed = ballSpeed;
             UpdateDir(ballDir);
             _ballType = ballType;
+            gameObject.layer = _ballType switch
+            {
+                Type.Player => 7 // Balls layer 
+                ,
+                Type.Master => 6 // MAsterBalls layer, not a fan of hardcoding but for now this will do
+                ,
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
 
         public void DestroyBall()
