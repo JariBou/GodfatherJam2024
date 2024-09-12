@@ -2416,7 +2416,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
@@ -3086,6 +3086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2395090445582724679, guid: e759e7103227f964eb2104b9d0a6eb46,
         type: 3}
+      propertyPath: _walls.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2395090445582724679, guid: e759e7103227f964eb2104b9d0a6eb46,
+        type: 3}
       propertyPath: _walls.Array.data[0]
       value: 
       objectReference: {fileID: 802973940}
@@ -3099,6 +3104,21 @@ PrefabInstance:
       propertyPath: _walls.Array.data[2]
       value: 
       objectReference: {fileID: 1629389582}
+    - target: {fileID: 2395090445582724679, guid: e759e7103227f964eb2104b9d0a6eb46,
+        type: 3}
+      propertyPath: _walls.Array.data[3]
+      value: 
+      objectReference: {fileID: 1337923575}
+    - target: {fileID: 2395090445582724679, guid: e759e7103227f964eb2104b9d0a6eb46,
+        type: 3}
+      propertyPath: _walls.Array.data[4]
+      value: 
+      objectReference: {fileID: 582710439}
+    - target: {fileID: 2395090445582724679, guid: e759e7103227f964eb2104b9d0a6eb46,
+        type: 3}
+      propertyPath: _walls.Array.data[5]
+      value: 
+      objectReference: {fileID: 1898296956}
     - target: {fileID: 3936661489141015300, guid: e759e7103227f964eb2104b9d0a6eb46,
         type: 3}
       propertyPath: _slider
