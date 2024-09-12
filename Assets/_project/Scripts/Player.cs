@@ -53,6 +53,7 @@ namespace _project.Scripts
                     Instantiate(_playerBallPickupParticle, transform.position, Quaternion.identity);
                     break;
                 case Ball.Type.Master:
+                    Instantiate(_masterBallPickupParticle, transform.position, Quaternion.identity);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

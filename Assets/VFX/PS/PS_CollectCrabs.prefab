@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2755946797512162151}
   - component: {fileID: 1978042698661328234}
   - component: {fileID: 7645673900375400576}
+  - component: {fileID: -8634905683847133032}
   m_Layer: 0
   m_Name: PS_CollectCrabs
   m_TagString: Untagged
@@ -4832,6 +4833,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-8634905683847133032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055281349726397148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208927d18624e984ea2969453b707437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delayBeforeDestroy: 2
 --- !u!1 &2879481688322180859
 GameObject:
   m_ObjectHideFlags: 0

@@ -4899,6 +4899,7 @@ GameObject:
   - component: {fileID: 1139544257628325761}
   - component: {fileID: 5768584456096664597}
   - component: {fileID: 7956878562676615526}
+  - component: {fileID: -3365443906843955142}
   m_Layer: 0
   m_Name: PS_CollectBuoy 1
   m_TagString: Untagged
@@ -9720,6 +9721,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-3365443906843955142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3328435399772725722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208927d18624e984ea2969453b707437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delayBeforeDestroy: 2
 --- !u!1001 &4589406778085177834
 PrefabInstance:
   m_ObjectHideFlags: 0
