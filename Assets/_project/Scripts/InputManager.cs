@@ -55,7 +55,7 @@ namespace _project.Scripts
 
         public void EnableInputs()
         {
-            EnableInputs();
+            EnablePlayerInput();
             EnableMasterInput();
         }
 

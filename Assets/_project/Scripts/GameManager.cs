@@ -1,4 +1,5 @@
 ﻿using System;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace _project.Scripts
@@ -8,9 +9,10 @@ namespace _project.Scripts
 
         [SerializeField] private int _maxScore = 100;
         [SerializeField] private int _startingScore = 50;
-        [SerializeField] private VFXManager _vfxManager;
-        [SerializeField] private BallManager _ballManager;
-        [SerializeField] private InputManager _inputManager;
+        [SerializeField, Foldout("Refs")] private VFXManager _vfxManager;
+        [SerializeField, Foldout("Refs")] private BallManager _ballManager;
+        [SerializeField, Foldout("Refs")] private InputManager _inputManager;
+        [SerializeField, Foldout("Refs")] private GameOverScreenScript _gameOverScreenScript;
 
         private int _score;
 
@@ -51,12 +53,14 @@ namespace _project.Scripts
             {
                 _inputManager.DisableInputs();
                 _ballManager.StopSpawning();
+                _gameOverScreenScript.Display(false);
                 Debug.Log("LOOOST");
                 // Lost
             } else if (_score >= _maxScore)
             {
                 _inputManager.DisableMasterInput();
                 _ballManager.StopSpawning();
+                _gameOverScreenScript.Display(true);
                 Debug.Log("WOOOOON");
                 // Won
             }
