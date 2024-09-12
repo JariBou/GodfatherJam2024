@@ -3,35 +3,40 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Timer : MonoBehaviour
 {
-    private float timer = 180;
+    [SerializeField] private int _gameTime = 180;
+    private float _timer = 180;
     private bool timeIsRunning;
     [SerializeField] private TMP_Text _timeScore;
+
+    public static event Action<int> TimerUpdate;
     private void Start()
     {
-        timer = 180;
+        _timer = _gameTime;
         timeIsRunning = true;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (timeIsRunning)
         {
-            if (timer > 0)
+            if (_timer > 0)
             {
-                timer -= Time.deltaTime;
-                _timeScore.text = Mathf.Round(timer).ToString();
+                _timer -= Time.fixedDeltaTime;
+                _timeScore.text = Mathf.Round(_timer).ToString();
             }
             else
             {
-                timer = 0;
-                _timeScore.text = timer.ToString();
+                _timer = 0;
+                _timeScore.text = _timer.ToString();
                 timeIsRunning = false;
                 Debug.Log("c'est finis frr");
             }
         }
         
+        TimerUpdate?.Invoke(Mathf.FloorToInt(_gameTime - _timer));
     }
 }
