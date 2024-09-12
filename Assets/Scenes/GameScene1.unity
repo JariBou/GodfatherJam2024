@@ -3135,13 +3135,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4945322378194452896}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.2706755, z: -0, w: 0.9626706}
-  m_LocalPosition: {x: 37.6, y: 0, z: 35.5}
+  m_LocalRotation: {x: 0, y: -0.3420201, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 40, y: 0, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4200966517804284900}
-  m_LocalEulerAnglesHint: {x: 0, y: -31.409, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -40, z: 0}
 --- !u!114 &3730374281103530551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3154,29 +3154,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e63289a85f0a43be504cb9ef94d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cooldownPerSpawn: 1
+  _cooldownPerSpawn: 2
   _cooldownPerSpawnRandomRange: 1
-  _ballsPerSpawnPhase: 1
-  _cooldownPerSpawnAttempt: 1
-  _cooldownPerSpawnAttemptRandomRange: 1
+  _ballsPerSpawnPhase: 5
+  _cooldownPerSpawnAttempt: 0.2
+  _cooldownPerSpawnAttemptRandomRange: 0.1
   _spawnpointsOffsetDic:
     _serializedList:
     - Key: {fileID: 6181599895814833782}
-      Value: {x: 0, y: 0, z: 0}
+      Value: {x: 0, y: 0, z: 15}
     - Key: {fileID: 8170659359418355427}
-      Value: {x: 0, y: 0, z: 0}
+      Value: {x: 0, y: 0, z: 15}
     - Key: {fileID: 3451879779546326186}
-      Value: {x: 0, y: 0, z: 0}
+      Value: {x: 0, y: 0, z: 15}
     - Key: {fileID: 2235832090160941455}
-      Value: {x: 0, y: 0, z: 0}
+      Value: {x: 15, y: 0, z: 0}
     - Key: {fileID: 131353409047172692}
-      Value: {x: 0, y: 0, z: 0}
+      Value: {x: 0, y: 0, z: 15}
   _target: {fileID: 1776226641015729368}
   _targetOffsetRadiusMax: 10
   _ballPrefab: {fileID: 2265639565674635405, guid: 9656943503a34a04c962872669af47fc,
     type: 3}
   _ballSpeed: 10
-  _masterBallRatio: 0.5
+  _masterBallRatio: 0.75
 --- !u!4 &4200966517804284900
 Transform:
   m_ObjectHideFlags: 0
@@ -3634,13 +3634,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2236758377326428089}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.26783353, z: -0, w: 0.9634653}
-  m_LocalPosition: {x: -34.5, y: 0, z: 40.2}
+  m_LocalRotation: {x: 0, y: 0.3420201, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: -40, y: 0, z: 40}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4200966517804284900}
-  m_LocalEulerAnglesHint: {x: 0, y: 31.071, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 40, z: 0}
 --- !u!1 &8225657745365978156
 GameObject:
   m_ObjectHideFlags: 0
