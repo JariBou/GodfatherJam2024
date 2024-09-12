@@ -1,4 +1,6 @@
 using System;
+using NaughtyAttributes;
+using UnityEditor;
 using UnityEngine;
 
 namespace _project.Scripts
@@ -11,10 +13,39 @@ namespace _project.Scripts
 
         [SerializeField] private Wall.Type _wallType;
 
+        // ============ Movement ============
+        [SerializeField, OnValueChanged("OnMoveChanged")] private bool _moves;
+        [SerializeField] private AnimationCurve _movementCurve;
+        [SerializeField, Range(0f, 5f)] private float _movementSpeed;
+        private Vector3 _startingPosition;
+        [SerializeField, HideInInspector] private Transform _targetTransform;
+        private Vector3 _snapshotTargetPosition;
+        private float _internalTimer;
+
         private bool _isActivated = true;
 
         public Type WallType => _wallType;
         public bool IsInactive => !_isActivated;
+
+        private void Awake()
+        {
+            _startingPosition = transform.position;
+            _snapshotTargetPosition = _targetTransform.position;
+            Destroy(_targetTransform.gameObject);
+        }
+
+        private void Update()
+        {
+            if (_moves && _isActivated)
+            {
+                float pingPongVal = Mathf.PingPong(_internalTimer, 1);
+                float lerpT = _movementCurve.Evaluate(pingPongVal);
+                Debug.Log(lerpT);
+                transform.position =
+                    Vector3.Lerp(_startingPosition, _snapshotTargetPosition, lerpT);
+                _internalTimer += Time.deltaTime * _movementSpeed;
+            }
+        }
 
         private void OnCollisionEnter(Collision other)
         {
@@ -62,6 +93,7 @@ namespace _project.Scripts
             float height = 2000;
             transform.position -= new Vector3(0, height, 0);
             _isActivated = false;
+            
             //TODO + animation and stuff
         }
 
@@ -69,6 +101,32 @@ namespace _project.Scripts
         {
             if (_isActivated) Deactivate();
             else Activate();
+        }
+
+        private void OnMoveChanged()
+        {
+            if (_moves)
+            {
+                Transform selfTransform = transform;
+                GameObject obj = new ($"Target of '{gameObject.name}'")
+                {
+                    transform =
+                    {
+                        parent = selfTransform,
+                        position = selfTransform.position,
+                    }
+                };
+                _targetTransform = obj.transform;
+                Selection.activeGameObject = obj;
+                SceneView.FrameLastActiveSceneView();
+            }
+            else
+            {
+                if (_targetTransform != null)
+                {
+                    DestroyImmediate(_targetTransform.gameObject);
+                }
+            }
         }
     }
 }

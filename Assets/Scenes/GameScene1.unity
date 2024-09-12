@@ -2210,6 +2210,37 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &1376189977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1376189978}
+  m_Layer: 0
+  m_Name: Target of 'FiletBleu'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1376189978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376189977}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0.88, z: -2.94}
+  m_LocalScale: {x: 0.22222216, y: 0.22222216, z: 0.22222224}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 827167101}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1505408446
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,6 +3251,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FiletBleu
       objectReference: {fileID: 0}
+    - target: {fileID: 6330632191517263552, guid: 31d3f6e71067bac488f64cbf6c2d03e7,
+        type: 3}
+      propertyPath: _moves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6330632191517263552, guid: 31d3f6e71067bac488f64cbf6c2d03e7,
+        type: 3}
+      propertyPath: _targetTransform
+      value: 
+      objectReference: {fileID: 1376189978}
     - target: {fileID: 6380406159114175080, guid: 31d3f6e71067bac488f64cbf6c2d03e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3272,7 +3313,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6380406159114175080, guid: 31d3f6e71067bac488f64cbf6c2d03e7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1376189978}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31d3f6e71067bac488f64cbf6c2d03e7, type: 3}
 --- !u!114 &4485734821735752757
