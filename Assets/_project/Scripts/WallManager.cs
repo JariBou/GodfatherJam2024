@@ -10,18 +10,30 @@ namespace _project.Scripts
     public class WallManager : MonoBehaviour
     {
         [SerializeField] private List<Wall> _walls;
-        
-        // Start is called before the first frame update
-        void Start()
+        [SerializeField] private float _timeBetweenWalls = 5f;
+        [SerializeField] private float _delayBeforeStart = 2f;
+        private float _lastBuildWallSecond; // 2s of delay before starting walls
+
+        private void Awake()
         {
-        
+            _lastBuildWallSecond = _delayBeforeStart;
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Start()
         {
-        
+            DeactivateAllWalls();
         }
+
+        private void OnTimerUpdated(int obj)
+        {
+            if (obj - _lastBuildWallSecond >= _timeBetweenWalls)
+            {
+                ActivateRandomWall();
+                _lastBuildWallSecond = obj;
+            }
+        }
+
+        #region Wall Activation/Deactivation
 
         public void ActivateRandomWallFromType(Wall.Type wallType)
         {
@@ -73,5 +85,18 @@ namespace _project.Scripts
             DeactivateAllWallsFromType(Wall.Type.Blue);
             DeactivateAllWallsFromType(Wall.Type.Yellow);
         }
+
+        #endregion
+        
+        private void OnEnable()
+        {
+            Timer.TimerUpdate += OnTimerUpdated;
+        }
+
+        private void OnDisable()
+        {
+            Timer.TimerUpdate -= OnTimerUpdated;
+        }
+        
     }
 }
