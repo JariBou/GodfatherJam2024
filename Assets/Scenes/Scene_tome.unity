@@ -2657,6 +2657,36 @@ PrefabInstance:
       propertyPath: _spawnPoints.Array.data[2]
       value: 
       objectReference: {fileID: 819705341}
+    - target: {fileID: 4822515759318345800, guid: dc9f1db063039d945bc82a7625af25d4,
+        type: 3}
+      propertyPath: _spawnpointsOffsetDic._serializedList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822515759318345800, guid: dc9f1db063039d945bc82a7625af25d4,
+        type: 3}
+      propertyPath: _spawnpointsOffsetDic._serializedList.Array.data[0].Key
+      value: 
+      objectReference: {fileID: 1592661884}
+    - target: {fileID: 4822515759318345800, guid: dc9f1db063039d945bc82a7625af25d4,
+        type: 3}
+      propertyPath: _spawnpointsOffsetDic._serializedList.Array.data[1].Key
+      value: 
+      objectReference: {fileID: 1076386354}
+    - target: {fileID: 4822515759318345800, guid: dc9f1db063039d945bc82a7625af25d4,
+        type: 3}
+      propertyPath: _spawnpointsOffsetDic._serializedList.Array.data[2].Key
+      value: 
+      objectReference: {fileID: 819705341}
+    - target: {fileID: 4822515759318345800, guid: dc9f1db063039d945bc82a7625af25d4,
+        type: 3}
+      propertyPath: _spawnpointsOffsetDic._serializedList.Array.data[0].Value.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822515759318345800, guid: dc9f1db063039d945bc82a7625af25d4,
+        type: 3}
+      propertyPath: _spawnpointsOffsetDic._serializedList.Array.data[0].Value.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5866134886182975635, guid: dc9f1db063039d945bc82a7625af25d4,
         type: 3}
       propertyPath: m_LocalPosition.x

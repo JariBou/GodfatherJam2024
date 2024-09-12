@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -19,7 +21,10 @@ namespace _project.Scripts
         [SerializeField] private Transform _target;
         [SerializeField] private float _offsetRadiusMax;
         // Can easily add an animation curve to make it more probable to be closer to center and stuff
-        [SerializeField] private List<Transform> _spawnPoints; // TODO: Use Graphics labor for a serialized dictionary with possible offset
+        //[SerializeField] private List<Transform> _spawnPoints; 
+
+        [SerializeField, SerializedDictionary("Spawnpoint", "Offset Range")]
+        private SerializedDictionary<Transform, Vector3> _spawnpointsOffsetDic;
 
         private float _internalTimer;
         private float _spawnAttemptInternalTimer;
@@ -43,27 +48,27 @@ namespace _project.Scripts
             {
                 return;
             }
-            Bounds bounds = _ballPrefab.gameObject.GetComponent<MeshRenderer>().bounds;
+            // Bounds bounds = _ballPrefab.gameObject.GetComponent<MeshRenderer>().bounds;
 
-            Vector3 spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Count)].position;
-            Physics.SphereCastNonAlloc(spawnPoint, Mathf.Max(bounds.extents.x, bounds.extents.y, bounds.extents.z),
+            int randomSpawnIndex = Random.Range(0, _spawnpointsOffsetDic.Keys.Count);
+            Transform spawnPointTransform = _spawnpointsOffsetDic.Keys.ToList()[randomSpawnIndex];
+            
+            Vector3 spawnPoint = spawnPointTransform.position;
+            Vector3 offsetRange = _spawnpointsOffsetDic[spawnPointTransform];
+            spawnPoint += new Vector3(Random.Range(-offsetRange.x, offsetRange.x), Random.Range(-offsetRange.y, offsetRange.y), Random.Range(-offsetRange.z, offsetRange.z));
+            
+            Physics.SphereCastNonAlloc(spawnPoint, 2,
                 Vector3.down, _hits);
             foreach (RaycastHit hit in _hits)
             {
                 if (hit.collider.GetComponent<Ball>())
                 {
-                    AttemptSpawn(attemptCount++);
+                    AttemptSpawn(attemptCount+1);
                     return;
                 }
             }
 
-            Ball spawnedBall = Instantiate(_ballPrefab, spawnPoint, Quaternion.identity, transform).GetComponent<Ball>();
-            Vector3 targetPos = _target.position + new Vector3(Random.Range(-_offsetRadiusMax, _offsetRadiusMax), 0,
-                Random.Range(-_offsetRadiusMax, _offsetRadiusMax));
-            Vector3 ballDir = targetPos - spawnPoint;
-            spawnedBall.Config(ballDir, _ballSpeed * _ballSpeedMultiplier, Ball.Type.Player);
-
-            // DO Spawning here
+            GenerateBall(spawnPoint);
 
             if (Math.Abs(_spawnAttemptInternalCounter - (_ballsPerSpawnPhase - 1)) < 0.0001f) StartCoroutine(DoSpawnPhaseCooldown());
             else
@@ -71,6 +76,15 @@ namespace _project.Scripts
                 _spawnAttemptInternalCounter++;
                 StartCoroutine(DoSpawnAttemptCooldown());
             }
+        }
+
+        private void GenerateBall(Vector3 spawnPoint)
+        {
+            Ball spawnedBall = Instantiate(_ballPrefab, spawnPoint, Quaternion.identity, transform).GetComponent<Ball>();
+            Vector3 targetPos = _target.position + new Vector3(Random.Range(-_offsetRadiusMax, _offsetRadiusMax), 0,
+                Random.Range(-_offsetRadiusMax, _offsetRadiusMax));
+            Vector3 ballDir = targetPos - spawnPoint;
+            spawnedBall.Config(ballDir, _ballSpeed * _ballSpeedMultiplier, Ball.Type.Player);
         }
 
         private IEnumerator DoSpawnPhaseCooldown()
