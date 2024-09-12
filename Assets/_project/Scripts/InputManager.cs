@@ -11,6 +11,8 @@ namespace _project.Scripts
         [Header("Master inputs params"),SerializeField] private float _spawnSpeedIncrement = .1f;
         [SerializeField] private float _ballSpeedIncrement = .1f;
         [SerializeField] private float _ballHellDuration = 5f;
+        [SerializeField] private float _ballHellSpawnCooldown = 0.15f;
+        [SerializeField] private float _ballHellSpawnCooldownRange = 0.05f;
         
         private PlayerInputs _inputs;
 
@@ -41,11 +43,11 @@ namespace _project.Scripts
 
             _inputs.PlayerMap.MasterBallHell.performed += _ =>
             {
-                _ballManager.DoBallHell(Ball.Type.Master, _ballHellDuration);
+                _ballManager.DoBallHell(Ball.Type.Master, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
             _inputs.PlayerMap.PlayerBallHell.performed += _ =>
             {
-                _ballManager.DoBallHell(Ball.Type.Player, _ballHellDuration);
+                _ballManager.DoBallHell(Ball.Type.Player, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
         }
         
