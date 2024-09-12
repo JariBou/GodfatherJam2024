@@ -43,12 +43,27 @@ namespace _project.Scripts
 
             _inputs.MasterMap.MasterBallHell.performed += _ =>
             {
+                _wallManager.ActivateAllWalls();
                 _ballManager.DoBallHell(Ball.Type.Master, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
             _inputs.MasterMap.PlayerBallHell.performed += _ =>
             {
+                _wallManager.DeactivateAllWalls();
                 _ballManager.DoBallHell(Ball.Type.Player, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
+        }
+        
+        
+        private void OnGameOver(bool state)
+        {
+            if (state)
+            {
+                DisableMasterInput();
+            }
+            else
+            {
+                DisableInputs();
+            }
         }
 
         #region Inputs Enabling/disabling
@@ -90,11 +105,13 @@ namespace _project.Scripts
         private void OnEnable()
         {
             EnableInputs();
+            GameManager.GameOver += OnGameOver;
         }
 
         private void OnDisable()
         {
             DisableInputs();
+            GameManager.GameOver -= OnGameOver;
         }
     }
 }

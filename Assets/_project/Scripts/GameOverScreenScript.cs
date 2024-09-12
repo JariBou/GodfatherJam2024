@@ -19,5 +19,20 @@ namespace _project.Scripts
             _panel.SetActive(true);
             _stateText.text = state ? "Won" : "Lost";
         }
+        
+        private void OnGameOver(bool state)
+        {
+            Display(state);
+        }
+
+        private void OnEnable()
+        {
+            GameManager.GameOver += OnGameOver;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.GameOver -= OnGameOver;
+        }
     }
 }

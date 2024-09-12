@@ -12,6 +12,8 @@ namespace _project.Scripts
         [SerializeField, Range(1, 200)] private float _appliedForceStrength = 60f;
         [FormerlySerializedAs("_speed")] [SerializeField, Range(0, 400)] private float _maxSpeed = 200f;
         private Vector3 _moveVec;
+
+        private bool _isPickupActive = true;
         
         public static event Action<Ball.Type> PlayerBallCollision; 
         
@@ -29,7 +31,8 @@ namespace _project.Scripts
         {
             if (!other.gameObject.GetComponent<Ball>()) return;
             Ball ballScript = other.gameObject.GetComponent<Ball>();
-            PlayerBallCollision?.Invoke(ballScript.BallType);
+            
+            if(_isPickupActive) PlayerBallCollision?.Invoke(ballScript.BallType);
             
             ballScript.DestroyBall();
         }
@@ -38,6 +41,21 @@ namespace _project.Scripts
         {
             Vector2 val = ctx.ReadValue<Vector2>();
             _moveVec = new Vector3(val.x, 0, val.y).normalized;
+        }
+        
+        private void OnGameOver(bool state)
+        {
+            _isPickupActive = false;
+        }
+
+        private void OnEnable()
+        {
+            GameManager.GameOver += OnGameOver;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.GameOver -= OnGameOver;
         }
 
         private void OnValidate()
