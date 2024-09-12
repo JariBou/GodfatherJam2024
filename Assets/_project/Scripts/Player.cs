@@ -14,11 +14,17 @@ namespace _project.Scripts
         [SerializeField, Range(1f, 5f)] private float _angularSpeed = 3f;
         [SerializeField] private GameObject _playerBallPickupParticle; 
         [SerializeField] private GameObject _masterBallPickupParticle; 
+        
         private Vector3 _moveVec;
-
+        private Transform _startTransform;
         private bool _isPickupActive = true;
         
         public static event Action<Ball.Type> PlayerBallCollision;
+
+        private void Awake()
+        {
+            _startTransform = transform;
+        }
 
         private void Update()
         {
@@ -79,6 +85,12 @@ namespace _project.Scripts
         private void OnValidate()
         {
             _rb.drag = _drag;
+        }
+
+        public void Respawn()
+        {
+            transform.position = _startTransform.position;
+            transform.rotation = _startTransform.rotation;
         }
     }
 }
