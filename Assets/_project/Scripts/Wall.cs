@@ -105,6 +105,7 @@ namespace _project.Scripts
             else Activate();
         }
 
+        #if UNITY_EDITOR
         private void OnMoveChanged()
         {
             if (_moves)
@@ -130,5 +131,6 @@ namespace _project.Scripts
                 }
             }
         }
+        #endif
     }
 }

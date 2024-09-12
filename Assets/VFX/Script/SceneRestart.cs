@@ -10,12 +10,12 @@ public class SceneRestart : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(0);
         }
 
         if (Input.GetKey(KeyCode.F5))
         {
-            SceneManager.LoadScene("Scene_tome");
+            SceneManager.LoadScene(1);
         }
     }
 }

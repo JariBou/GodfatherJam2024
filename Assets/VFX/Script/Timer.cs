@@ -43,4 +43,19 @@ public class Timer : MonoBehaviour
         
         TimerUpdate?.Invoke(Mathf.FloorToInt(_gameTime - _timer));
     }
+    
+    private void OnGameOver(bool state)
+    {
+        timeIsRunning = false;
+    }
+
+    private void OnEnable()
+    {
+        GameManager.GameOver += OnGameOver;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.GameOver -= OnGameOver;
+    }
 }
