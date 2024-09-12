@@ -2415,8 +2415,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _BaseColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    - _Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
@@ -2751,6 +2751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcc2ab1b28bec74e821390e8d44a94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameTime: 180
   _timeScore: {fileID: 1138912925}
 --- !u!114 &1706514741 stripped
 MonoBehaviour:
@@ -2902,6 +2903,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -9.277, z: 0}
+--- !u!114 &1812605241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4822515759318345800, guid: dc9f1db063039d945bc82a7625af25d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5741032598437099751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e63289a85f0a43be504cb9ef94d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1898296955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,6 +3123,11 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1220841732}
+    - target: {fileID: 1464170373696361001, guid: e759e7103227f964eb2104b9d0a6eb46,
+        type: 3}
+      propertyPath: _ballManager
+      value: 
+      objectReference: {fileID: 1812605241}
     - target: {fileID: 1585978002467048056, guid: e759e7103227f964eb2104b9d0a6eb46,
         type: 3}
       propertyPath: m_Name
