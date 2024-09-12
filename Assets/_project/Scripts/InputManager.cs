@@ -52,6 +52,19 @@ namespace _project.Scripts
                 _ballManager.DoBallHell(Ball.Type.Player, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
         }
+        
+        
+        private void OnGameOver(bool state)
+        {
+            if (state)
+            {
+                DisableMasterInput();
+            }
+            else
+            {
+                DisableInputs();
+            }
+        }
 
         #region Inputs Enabling/disabling
 
@@ -92,11 +105,13 @@ namespace _project.Scripts
         private void OnEnable()
         {
             EnableInputs();
+            GameManager.GameOver += OnGameOver;
         }
 
         private void OnDisable()
         {
             DisableInputs();
+            GameManager.GameOver -= OnGameOver;
         }
     }
 }

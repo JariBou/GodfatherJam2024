@@ -208,6 +208,21 @@ namespace _project.Scripts
             }
         }
         
+        private void OnGameOver(bool state)
+        {
+            StopSpawning();
+        }
+
+        private void OnEnable()
+        {
+            GameManager.GameOver += OnGameOver;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.GameOver -= OnGameOver;
+        }
+
         private void OnValidate()
         {
             if (_ballPrefab != null && _ballPrefab.GetComponent<Ball>() == null) _ballPrefab = null;

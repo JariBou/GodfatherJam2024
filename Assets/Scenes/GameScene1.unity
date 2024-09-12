@@ -2440,8 +2440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcc2ab1b28bec74e821390e8d44a94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameTime: 180
+  _gameTime: 3
   _timeScore: {fileID: 1138912925}
+  _gameManager: {fileID: 961575638518693816}
 --- !u!4 &1808895328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3563478062882812862, guid: 4cb3439931246fe4d944bf59b8883ba4,
@@ -2875,6 +2876,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 280a9a9ecf65c64408710327b3bafb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &961575638518693816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4534405483442899161, guid: e759e7103227f964eb2104b9d0a6eb46,
+    type: 3}
+  m_PrefabInstance: {fileID: 961575638518693813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706514729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1259c4b4b1c84b84b5052b02adfe013b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1003316323682129106

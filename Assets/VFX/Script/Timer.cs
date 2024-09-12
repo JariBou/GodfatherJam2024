@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _project.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -11,6 +12,7 @@ public class Timer : MonoBehaviour
     private float _timer = 180;
     private bool timeIsRunning;
     [SerializeField] private TMP_Text _timeScore;
+    [SerializeField] private GameManager _gameManager;
 
     public static event Action<int> TimerUpdate;
     private void Start()
@@ -33,8 +35,10 @@ public class Timer : MonoBehaviour
                 _timer = 0;
                 _timeScore.text = _timer.ToString();
                 timeIsRunning = false;
+                _gameManager.EndGameByTimer();
                 Debug.Log("c'est finis frr");
             }
+            
         }
         
         TimerUpdate?.Invoke(Mathf.FloorToInt(_gameTime - _timer));

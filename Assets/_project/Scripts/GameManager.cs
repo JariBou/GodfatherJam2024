@@ -16,6 +16,8 @@ namespace _project.Scripts
 
         private int _score;
 
+        public static event Action<bool> GameOver; 
+
         private void Awake()
         {
             _score = _startingScore;
@@ -51,18 +53,26 @@ namespace _project.Scripts
         {
             if (_score <= 0)
             {
-                _inputManager.DisableInputs();
-                _ballManager.StopSpawning();
-                _gameOverScreenScript.Display(false);
-                Debug.Log("LOOOST");
-                // Lost
+                EndGame(false);
             } else if (_score >= _maxScore)
             {
-                _inputManager.DisableMasterInput();
-                _ballManager.StopSpawning();
-                _gameOverScreenScript.Display(true);
+                EndGame(true);
+            }
+        }
+
+        private void EndGame(bool state)
+        {
+            if (state)
+            {
+                GameOver?.Invoke(true);
                 Debug.Log("WOOOOON");
                 // Won
+            }
+            else
+            {
+                GameOver?.Invoke(false);
+                Debug.Log("LOOOST");
+                // Lost
             }
         }
         
@@ -80,6 +90,11 @@ namespace _project.Scripts
         {
             if (_startingScore >= _maxScore) _startingScore = _maxScore - 1;
             if (_maxScore < 2) _maxScore = 2;
+        }
+
+        public void EndGameByTimer()
+        {
+            EndGame(_score > _startingScore);
         }
     }
 }
