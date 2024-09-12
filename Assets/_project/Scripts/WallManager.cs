@@ -44,6 +44,12 @@ namespace _project.Scripts
         {
             ActivateRandomWallFromType(_wallType);
         }
-        
+
+        public void ActivateRandomWall()
+        {
+            List<Wall> inactiveWalls = _walls.Where(wall => wall.IsInactive).ToList();
+            if (!inactiveWalls.Any()) return;
+            inactiveWalls[Random.Range(0, inactiveWalls.Count)].Activate();
+        }
     }
 }

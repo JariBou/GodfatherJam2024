@@ -2415,8 +2415,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-    - _Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
@@ -2752,6 +2752,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timeScore: {fileID: 1138912925}
+--- !u!114 &1706514741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2395090445582724679, guid: e759e7103227f964eb2104b9d0a6eb46,
+    type: 3}
+  m_PrefabInstance: {fileID: 961575638518693813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706514729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01d46d8c11f6cb49b23e3d786065408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1706514743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706514729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe60a12cdd9b477295ad59e7b75bd184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wallManager: {fileID: 1706514741}
+  _events:
+    _serializedList:
+    - Key: 10
+      Value: 00000000
+    - Key: 20
+      Value: 00000000
 --- !u!1 &1799487558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,6 +3213,10 @@ PrefabInstance:
         type: 3}
       insertIndex: 5
       addedObject: {fileID: 1706514736}
+    - targetCorrespondingSourceObject: {fileID: 1585978002467048056, guid: e759e7103227f964eb2104b9d0a6eb46,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1706514743}
   m_SourcePrefab: {fileID: 100100000, guid: e759e7103227f964eb2104b9d0a6eb46, type: 3}
 --- !u!1001 &1003316323682129106
 PrefabInstance:
