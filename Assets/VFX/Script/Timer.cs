@@ -11,6 +11,8 @@ namespace VFX.Script
         private float _timer = 120;
         private bool timeIsRunning;
         [SerializeField] private TMP_Text _timeScore;
+        [SerializeField] private Color _warningColor;
+        [SerializeField] private Color _dangerColor;
         [SerializeField] private GameManager _gameManager;
 
         public static event Action<int> TimerUpdate;
@@ -28,6 +30,13 @@ namespace VFX.Script
                 {
                     _timer -= Time.fixedDeltaTime;
                     _timeScore.text = Mathf.Round(_timer).ToString();
+                    if (_timer <= 1/4f * _gameTime)
+                    {
+                        _timeScore.color = _dangerColor;
+                    } else if (_timer <= 1/2f * _gameTime)
+                    {
+                        _timeScore.color = _warningColor;
+                    } 
                 }
                 else
                 {
