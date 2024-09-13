@@ -56,11 +56,11 @@ namespace _project.Scripts
             if (!other.gameObject.GetComponent<Ball>() || !_isActivated) return; // TEMP "!_isActivated"
         
             Ball ballScript = other.gameObject.GetComponent<Ball>();
-            if (ballScript.BallType == Ball.Type.Master) return;
 
             switch (WallType)
             {
                 case Type.Red or Type.Blue or Type.Yellow:
+                    if (ballScript.BallType == Ball.Type.Master) return;
                     ballScript.DestroyBall();
                     break;
                 case Type.Bouncy:
