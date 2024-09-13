@@ -13,6 +13,7 @@ namespace VFX.Script
         public void UpdateSlider(float percent, bool playerWinning)
         {
             _slider.material.SetFloat("_SliderPercentage", percent);
+            Debug.Log(playerWinning ? 1 : 0);
             _slider.material.SetInt("_IsPlayerWinning", playerWinning ? 1 : 0);
         }
 

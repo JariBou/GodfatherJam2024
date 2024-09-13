@@ -73,7 +73,7 @@ Material:
     m_Floats:
     - _AlphaAmount: 0.9
     - _DistanceDepht: 12.66
-    - _FoamAmount: 2.81
+    - _FoamAmount: 11.4
     - _FoamCutOff: 4.88
     - _QueueControl: 0
     - _QueueOffset: 0
