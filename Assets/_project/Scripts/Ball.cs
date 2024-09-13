@@ -66,6 +66,8 @@ namespace _project.Scripts
                     break;
                 case Type.Master:
                     GetComponent<MeshRenderer>().material.color = Color.magenta;
+                    
+                    transform.rotation = Quaternion.LookRotation(Quaternion.AngleAxis(30, Vector3.up) * _dir);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ballType), ballType, null);
