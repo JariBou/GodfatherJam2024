@@ -110,7 +110,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fae7de4a507394d4ba36ea676f6170d6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 6.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fae7de4a507394d4ba36ea676f6170d6,
         type: 3}
@@ -193,6 +193,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8571998418138556187}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fae7de4a507394d4ba36ea676f6170d6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8438362092713119444}
   m_SourcePrefab: {fileID: 100100000, guid: fae7de4a507394d4ba36ea676f6170d6, type: 3}
 --- !u!1 &5873480696597927079 stripped
 GameObject:
@@ -263,6 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 2306260644341990852}
+  _animator: {fileID: 8438362092713119444}
   _drag: 1.7
   _appliedForceStrength: 60
   _maxSpeed: 15
@@ -274,13 +279,34 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 243975cdb7e4b52468ff7928e1f82442, type: 3}
   - {fileID: 8300000, guid: ad81c9b8c4c59b64ba8a1433eca35046, type: 3}
   - {fileID: 8300000, guid: fd323f8746cb2df4f871a80d2e06438c, type: 3}
-  _masterBallPickupParticle: {fileID: 1055281349726397148, guid: e5de06d58478baa4c8395630927a0e8e,
+  _masterBallPickupParticle: {fileID: 3328435399772725722, guid: 6b47738c59fc508469c2194b3ca54ba9,
     type: 3}
   _masterBallPickupSound:
   - {fileID: 8300000, guid: ceed5e163ab77da40958352e24a14b02, type: 3}
   - {fileID: 8300000, guid: 7811e181285acf7418f027c5f0a06b87, type: 3}
   - {fileID: 8300000, guid: e9814e2801183d247bb44c79eb39a057, type: 3}
   - {fileID: 8300000, guid: 12db9eab271b0ff44af7ca1344c56b5c, type: 3}
+--- !u!95 &8438362092713119444
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873480696597927079}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de407bc483b542f4fb85c3b1a9f5317f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &6541789893434347037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fae7de4a507394d4ba36ea676f6170d6,
