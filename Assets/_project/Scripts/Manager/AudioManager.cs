@@ -16,8 +16,7 @@ namespace _project.Scripts.Manager
         {
             Instance ??= this;
         }
-
-
+        
         public static void PlayClip(AudioClip clip)
         {
             Instance._oneshotAudioSource.PlayOneShot(clip);
@@ -40,6 +39,11 @@ namespace _project.Scripts.Manager
             }
             Instance._oneshotAudioSource.PlayOneShot(randomClip);
             Instance._lastPlayedClips.Add(randomClip);
+        }
+
+        private void OnDestroy()
+        {
+            Instance = null;
         }
     }
     
