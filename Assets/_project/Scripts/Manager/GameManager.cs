@@ -48,7 +48,7 @@ namespace _project.Scripts
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ballType), ballType, null);
             }
-            _vfxManager.UpdateSlider(GetScorePercent(), GetScorePercent()>_startingScore);
+            _vfxManager.UpdateSlider(GetScorePercent(), GetScorePercent()>_startingScore/(float)_maxScore);
             CheckEndOfGame();
             // TODO
             // Check win con and update displays
