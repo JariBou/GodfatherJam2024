@@ -2386,7 +2386,7 @@ MonoBehaviour:
   _loseText: {fileID: 1120233289}
   _winText: {fileID: 1660203763}
   _coinsDrop: {fileID: 727677710}
-  _crabDrop: {fileID: 0}
+  _crabDrop: {fileID: 2315779100573162632}
 --- !u!1 &530276405 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
@@ -10861,6 +10861,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!198 &2315779100573162632 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2121563457273397116, guid: c29e0fe9cea0b4947abbbf71e14354bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3319549516506468078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2324215530602302188
 Transform:
   m_ObjectHideFlags: 0
@@ -11722,6 +11728,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4840671824075333677, guid: 429b620a1387a4a4d91c711bc8234fde,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5659922118952645731, guid: 429b620a1387a4a4d91c711bc8234fde,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11776,6 +11787,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EndPancarte
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384558969278007811, guid: 429b620a1387a4a4d91c711bc8234fde,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545493514329939417, guid: 429b620a1387a4a4d91c711bc8234fde,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

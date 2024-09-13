@@ -27,7 +27,7 @@ namespace _project.Scripts
             }
             else
             {
-                _loseText.SetActive(false);
+                _loseText.SetActive(true);
                 _crabDrop.Play();
             }
         }
