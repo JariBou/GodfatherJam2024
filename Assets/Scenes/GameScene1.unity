@@ -9346,7 +9346,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _masterBallPickupParticle
       value: 
-      objectReference: {fileID: 3328435399772725722, guid: 6b47738c59fc508469c2194b3ca54ba9,
+      objectReference: {fileID: 1055281349726397148, guid: e5de06d58478baa4c8395630927a0e8e,
         type: 3}
     - target: {fileID: 8571998418138556187, guid: 537bd4d8583e06049be3bf78a9243869,
         type: 3}
