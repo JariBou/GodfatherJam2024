@@ -7,7 +7,10 @@ namespace _project.Scripts
     public class GameOverScreenScript : MonoBehaviour
     {
         [SerializeField] private GameObject _panel;
-        [SerializeField] private TMP_Text _stateText;
+        [SerializeField] private GameObject _loseText;
+        [SerializeField] private GameObject _winText;
+        [SerializeField] private ParticleSystem _coinsDrop;
+        [SerializeField] private ParticleSystem _crabDrop;
 
         private void Start()
         {
@@ -17,7 +20,16 @@ namespace _project.Scripts
         public void Display(bool state)
         {
             _panel.SetActive(true);
-            _stateText.text = state ? "Won" : "Lost";
+            if (state)
+            {
+                _winText.SetActive(true);
+                _coinsDrop.Play();
+            }
+            else
+            {
+                _loseText.SetActive(false);
+                _crabDrop.Play();
+            }
         }
         
         private void OnGameOver(bool state)

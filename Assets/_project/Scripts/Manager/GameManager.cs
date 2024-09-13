@@ -14,6 +14,7 @@ namespace _project.Scripts
         [SerializeField, Foldout("Refs")] private BallManager _ballManager;
         [SerializeField, Foldout("Refs")] private InputManager _inputManager;
         [SerializeField, Foldout("Refs")] private GameOverScreenScript _gameOverScreenScript;
+        
 
         private int _score;
 
