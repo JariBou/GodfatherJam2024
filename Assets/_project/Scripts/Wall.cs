@@ -12,6 +12,8 @@ namespace _project.Scripts
         }
 
         [SerializeField] private Wall.Type _wallType;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private bool _hasAnimOnHit;
 
         // ============ Movement ============
         [SerializeField, OnValueChanged("OnMoveChanged")] private bool _moves;
@@ -64,6 +66,10 @@ namespace _project.Scripts
                 case Type.Bouncy:
                     Vector3 newBallDir = Vector3.Reflect(ballScript.Dir, other.GetContact(0).normal);
                     ballScript.UpdateDir(newBallDir);
+                    if (_hasAnimOnHit)
+                    {
+                        _animator.SetTrigger("OnHit");
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
