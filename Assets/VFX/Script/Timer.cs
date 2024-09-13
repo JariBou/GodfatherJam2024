@@ -8,8 +8,8 @@ using UnityEngine.Serialization;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private int _gameTime = 180;
-    private float _timer = 180;
+    [SerializeField] private int _gameTime = 120;
+    private float _timer = 120;
     private bool timeIsRunning;
     [SerializeField] private TMP_Text _timeScore;
     [SerializeField] private GameManager _gameManager;
