@@ -68,7 +68,7 @@ namespace _project.Scripts
                     ballScript.UpdateDir(newBallDir);
                     if (_hasAnimOnHit)
                     {
-                        _animator.SetTrigger("OnHit");
+                        _animator.SetTrigger("Hit");
                     }
                     break;
                 default:
