@@ -60,6 +60,7 @@ namespace _project.Scripts
                 case Ball.Type.Player:
                     Instantiate(_playerBallPickupParticle, transform.position, Quaternion.identity);
                     AudioManager.PlayRandomClipWithNoRepeat(_playerBallPickupSound);
+                    _animator.SetTrigger("Collected");
                     break;
                 case Ball.Type.Master:
                     Instantiate(_masterBallPickupParticle, transform.position, Quaternion.identity);
