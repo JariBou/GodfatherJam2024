@@ -1,21 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneRestart : MonoBehaviour
+namespace VFX.Script
 {
-   
-    void Update()
+    public class SceneRestart : MonoBehaviour
     {
-        if(Input.GetKey(KeyCode.Escape))
+   
+        void Update()
         {
-            SceneManager.LoadScene(0);
-        }
+            if(Input.GetKey(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(0);
+            }
 
-        if (Input.GetKey(KeyCode.F5))
-        {
-            SceneManager.LoadScene(1);
+            if (Input.GetKey(KeyCode.F5))
+            {
+                SceneManager.LoadScene(1);
+            }
         }
     }
 }

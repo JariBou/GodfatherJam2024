@@ -10,6 +10,7 @@ namespace _project.Scripts
     public class Player : MonoBehaviour
     {
         [SerializeField] private Rigidbody _rb;
+        [SerializeField] private Animator _animator;
         [SerializeField, Range(0, 20)] private float _drag = 1.7f;
         [SerializeField, Range(1, 200)] private float _appliedForceStrength = 60f;
         [FormerlySerializedAs("_speed")] [SerializeField, Range(0, 400)] private float _maxSpeed = 200f;
@@ -59,9 +60,11 @@ namespace _project.Scripts
                 case Ball.Type.Player:
                     Instantiate(_playerBallPickupParticle, transform.position, Quaternion.identity);
                     AudioManager.PlayRandomClipWithNoRepeat(_playerBallPickupSound);
+                    _animator.SetTrigger("Collected");
                     break;
                 case Ball.Type.Master:
                     Instantiate(_masterBallPickupParticle, transform.position, Quaternion.identity);
+                    _animator.SetTrigger("Hurt");
                     AudioManager.PlayRandomClipWithNoRepeat(_masterBallPickupSound);
                     break;
                 default:

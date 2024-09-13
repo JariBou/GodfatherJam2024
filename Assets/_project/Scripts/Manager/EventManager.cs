@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using VFX.Script;
 using Random = UnityEngine.Random;
 
 namespace _project.Scripts

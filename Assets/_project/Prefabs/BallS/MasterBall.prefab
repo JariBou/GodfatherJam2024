@@ -102,6 +102,40 @@ MonoBehaviour:
   _ballType: 0
   _dir: {x: 1, y: 0, z: 1}
   _speed: 5
+  _spawnScaleMult:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.723097
+      value: 1.1807007
+      inSlope: 0.8760731
+      outSlope: 0.8760731
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _animTime: 0.8
   _destroyDelay: 0
 --- !u!33 &1623780193986040579
 MeshFilter:
@@ -164,17 +198,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2db4e05b727d63648a1460596c8d702b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 64.02
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2db4e05b727d63648a1460596c8d702b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 64.02
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2db4e05b727d63648a1460596c8d702b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 64.02
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2db4e05b727d63648a1460596c8d702b,
         type: 3}

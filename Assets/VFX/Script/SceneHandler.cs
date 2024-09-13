@@ -1,16 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneHandler : MonoBehaviour
+namespace VFX.Script
 {
-    private void Update()
+    public class SceneHandler : MonoBehaviour
     {
-        if (Input.anyKey)
+        private void Update()
         {
-            SceneManager.LoadScene(1);
+            if (Input.anyKey)
+            {
+                SceneManager.LoadScene(1);
+            }
         }
     }
 }
