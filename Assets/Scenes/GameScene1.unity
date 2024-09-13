@@ -229,6 +229,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -326,10 +331,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2874765826992384646, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 373ead33f3af9574294742893c88f13c,
         type: 3}
       propertyPath: m_Name
       value: chest (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248574976466802116, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -427,6 +447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -523,6 +548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -555,7 +585,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139203388}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -582,6 +612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -685,6 +717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -895,10 +932,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2874765826992384646, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 373ead33f3af9574294742893c88f13c,
         type: 3}
       propertyPath: m_Name
       value: chest (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248574976466802116, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1080,6 +1132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1106,7 +1163,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9310814}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1133,6 +1190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -1224,6 +1283,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1484,7 +1548,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176278615}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1511,6 +1575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -1615,6 +1681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1710,6 +1781,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1817,7 +1893,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127392161}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1844,6 +1920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -1935,6 +2013,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2238,6 +2321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3096,7 +3184,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692295471}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3123,6 +3211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -3214,6 +3304,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3310,6 +3405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3596,7 +3696,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166924199}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3623,6 +3723,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -3645,7 +3747,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815904630}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3672,6 +3774,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -3801,6 +3905,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3827,7 +3936,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933675126}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3854,6 +3963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -3945,6 +4056,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4415,6 +4531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4517,6 +4638,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4612,6 +4738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4709,6 +4840,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4804,6 +4940,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5069,6 +5210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -5258,7 +5401,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183465873}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5285,6 +5428,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -5376,6 +5521,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5473,6 +5623,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5517,7 +5672,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244882544}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5544,6 +5699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -5566,7 +5723,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276264648}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5593,6 +5750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -5849,6 +6008,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5875,7 +6039,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460735964}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5902,6 +6066,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -5994,6 +6160,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6020,7 +6191,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43782904}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6047,6 +6218,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -6069,7 +6242,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21204778}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6096,6 +6269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -6118,7 +6293,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513902283}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6145,6 +6320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -6167,7 +6344,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484789266}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6194,6 +6371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -6285,6 +6464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6506,10 +6690,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2874765826992384646, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 373ead33f3af9574294742893c88f13c,
         type: 3}
       propertyPath: m_Name
       value: chest (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248574976466802116, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6537,7 +6736,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028395473}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6564,6 +6763,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -6687,6 +6888,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6713,7 +6919,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358187581}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6740,6 +6946,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -6762,7 +6970,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790914847}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6789,6 +6997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -6887,6 +7097,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6913,7 +7128,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 530276405}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6940,6 +7155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7100,6 +7317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7252,7 +7474,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630271483}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7279,6 +7501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7497,7 +7721,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405759888}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7524,6 +7748,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7552,7 +7778,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388377414}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7579,6 +7805,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7622,7 +7850,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235728817}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7649,6 +7877,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7683,7 +7913,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698645169}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7710,6 +7940,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7732,7 +7964,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766523663}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7759,6 +7991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7846,10 +8080,25 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2874765826992384646, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 373ead33f3af9574294742893c88f13c,
         type: 3}
       propertyPath: m_Name
       value: chest (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248574976466802116, guid: 373ead33f3af9574294742893c88f13c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7877,7 +8126,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297555156}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7904,6 +8153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7944,7 +8195,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837208881}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7971,6 +8222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -7993,7 +8246,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349087332}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8020,6 +8273,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -8111,6 +8366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8359,7 +8619,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723045802}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8386,6 +8646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -8477,6 +8739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barril (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8642,6 +8909,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barril (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e79ebf0e37b87bf44865b3ca19c75c9d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8699,7 +8971,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023813780}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8726,6 +8998,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -8748,7 +9022,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093921653}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8775,6 +9049,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -8797,7 +9073,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288931794}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -8824,6 +9100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
@@ -8978,7 +9256,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137567283}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f889459b0e54b5a41a0ca3be3dea9f07, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -9005,6 +9283,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallType: 3
+  _animator: {fileID: 0}
+  _hasAnimOnHit: 0
   _moves: 0
   _movementCurve:
     serializedVersion: 2
