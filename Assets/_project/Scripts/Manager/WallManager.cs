@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
 using UnityEngine;
+using VFX.Script;
 using Random = UnityEngine.Random;
 
 namespace _project.Scripts

@@ -1,36 +1,40 @@
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
-public class VFXManager : MonoBehaviour
+namespace VFX.Script
 {
-    [SerializeField] private ParticleSystem _scoringParticleSystem;
-    [SerializeField] private ParticleSystem _appearParticleSystem;
-    private ParticleSystemStopBehavior _particleSystemStopBehavior = ParticleSystemStopBehavior.StopEmitting;
-    [SerializeField] private Image _slider;
-
-    public void UpdateSlider(float percent)
+    public class VFXManager : MonoBehaviour
     {
-        _slider.material.SetFloat("_SliderPercentage", percent);
-    }
+        [SerializeField] private ParticleSystem _scoringParticleSystem;
+        [SerializeField] private ParticleSystem _appearParticleSystem;
+        private ParticleSystemStopBehavior _particleSystemStopBehavior = ParticleSystemStopBehavior.StopEmitting;
+        [SerializeField] private Image _slider;
 
-    void ScoringParticleParticlePlay()
-    {
-        _scoringParticleSystem.Play();
-    }
+        public void UpdateSlider(float percent, bool playerWinning)
+        {
+            _slider.material.SetFloat("_SliderPercentage", percent);
+            _slider.material.SetInt("_IsPlayerWinning", playerWinning ? 1 : 0);
+        }
 
-    void ScoringParticleParticleEnd()
-    {
-        _scoringParticleSystem.Stop(true, _particleSystemStopBehavior);
-    }
+        void ScoringParticleParticlePlay()
+        {
+            _scoringParticleSystem.Play();
+        }
 
-    void AppearParticleSystemPlay()
-    {
-        _appearParticleSystem.Play();
-    }
+        void ScoringParticleParticleEnd()
+        {
+            _scoringParticleSystem.Stop(true, _particleSystemStopBehavior);
+        }
+
+        void AppearParticleSystemPlay()
+        {
+            _appearParticleSystem.Play();
+        }
     
-    void AppearParticleSystemEnd()
-    {
-        _appearParticleSystem.Stop(true, _particleSystemStopBehavior);
-    }
+        void AppearParticleSystemEnd()
+        {
+            _appearParticleSystem.Stop(true, _particleSystemStopBehavior);
+        }
     
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using NaughtyAttributes;
 using UnityEngine;
+using VFX.Script;
 
 namespace _project.Scripts
 {
@@ -21,7 +22,11 @@ namespace _project.Scripts
         private void Awake()
         {
             _score = _startingScore;
-            _vfxManager.UpdateSlider(GetScorePercent());
+        }
+
+        private void Start()
+        {
+            _vfxManager.UpdateSlider(GetScorePercent(), false);
         }
 
         // For Shader (ScoreDisplay)
@@ -43,7 +48,7 @@ namespace _project.Scripts
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ballType), ballType, null);
             }
-            _vfxManager.UpdateSlider(GetScorePercent());
+            _vfxManager.UpdateSlider(GetScorePercent(), GetScorePercent()>_startingScore);
             CheckEndOfGame();
             // TODO
             // Check win con and update displays
