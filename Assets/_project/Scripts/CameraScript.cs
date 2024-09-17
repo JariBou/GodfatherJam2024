@@ -18,6 +18,7 @@ namespace _project.Scripts
         // Update is called once per frame
         void Update()
         {
+            if (_player == null) return;
             // Vector3 playerPos = _player.transform.position - _player.StartTransform.position;
             // Vector3 playerDividedPos =
             //     new Vector3(playerPos.x / _divisionFactor, playerPos.y, playerPos.z / _divisionFactor);

@@ -5,7 +5,7 @@ using UnityEngine;
 using VFX.Script;
 using Random = UnityEngine.Random;
 
-namespace _project.Scripts
+namespace _project.Scripts.Manager
 {
     
     public enum GameEventType

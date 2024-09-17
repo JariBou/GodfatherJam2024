@@ -3,7 +3,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using VFX.Script;
 
-namespace _project.Scripts
+namespace _project.Scripts.Manager
 {
     public class GameManager : MonoBehaviour
     {
@@ -23,6 +23,8 @@ namespace _project.Scripts
         private void Awake()
         {
             _score = _startingScore;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Start()

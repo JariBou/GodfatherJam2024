@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace _project.Scripts
+namespace _project.Scripts.Manager
 {
     public class InputManager : MonoBehaviour
     {
@@ -43,11 +43,13 @@ namespace _project.Scripts
 
             _inputs.MasterMap.MasterBallHell.performed += _ =>
             {
+                if(_ballManager.IsBallHellActive) return; 
                 _wallManager.ActivateAllWalls();
                 _ballManager.DoBallHell(Ball.Type.Master, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };
             _inputs.MasterMap.PlayerBallHell.performed += _ =>
             {
+                if(_ballManager.IsBallHellActive) return; 
                 _wallManager.DeactivateAllWalls();
                 _ballManager.DoBallHell(Ball.Type.Player, _ballHellDuration, _ballHellSpawnCooldown, _ballHellSpawnCooldownRange);
             };

@@ -1,13 +1,12 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-namespace _project.Scripts
+namespace _project.Scripts.Manager
 {
     public class BallManager : MonoBehaviour
     {
@@ -41,8 +40,10 @@ namespace _project.Scripts
         // Bullet hell
         private bool _stopFlag = false;
         private Coroutine _bulletHellRoutine;
-        
-        
+
+        public bool IsBallHellActive => _stopFlag;
+
+
         // Start is called before the first frame update
         void Start()
         {
@@ -51,7 +52,7 @@ namespace _project.Scripts
 
         private void AttemptSpawn(int attemptCount = 0)
         {
-            if (attemptCount > 20 || _stopFlag)
+            if (attemptCount > 20 || IsBallHellActive)
             {
                 return;
             }
@@ -132,7 +133,7 @@ namespace _project.Scripts
 
         public void DoBallHell(Ball.Type ballType, float duration, float spawnAttemptCooldown = 0.15f, float spawnAttemptCooldownRange = 0.05f)
         {
-            if (_stopFlag) return; // please don't break my code, thanks
+            if (IsBallHellActive) return; // please don't break my code, thanks
             _stopFlag = true;
             
             if(_spawnAttemptRoutine != null) StopCoroutine(_spawnAttemptRoutine);

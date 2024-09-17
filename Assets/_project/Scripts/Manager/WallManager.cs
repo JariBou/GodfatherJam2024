@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
@@ -6,7 +5,7 @@ using UnityEngine;
 using VFX.Script;
 using Random = UnityEngine.Random;
 
-namespace _project.Scripts
+namespace _project.Scripts.Manager
 {
     public class WallManager : MonoBehaviour
     {
